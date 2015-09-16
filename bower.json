@@ -1,6 +1,5 @@
 {
   "name": "node-webkit-angular-app",
-  "version": "0.0.1",
   "ignore": [],
   "dependencies": {
     "angular": "1.4.5",

@@ -1,7 +1,7 @@
 # phpstorm
 .idea
 
-# node logs
+# logs
 *.log
 
 # os generated files
@@ -11,11 +11,12 @@ Thumbs.db
 # nw builder
 /build/
 /cache/
+/tmp/
 
 # node packages
 node_modules/
 npm-debug.log
-/tmp/
+
 
 # bower packages
 bower_components/

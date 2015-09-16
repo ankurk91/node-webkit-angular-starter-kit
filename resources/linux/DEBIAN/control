@@ -4,4 +4,5 @@ Maintainer: {{author}}
 Priority: optional
 Architecture: amd64
 Installed-Size: {{size}}
+Homepage: http://www.example.com/product
 Description: {{description}}
