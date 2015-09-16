@@ -1,8 +1,12 @@
+# https://github.com/github/gitignore
+
 # phpstorm
 .idea
 
 # logs
+logs/
 *.log
+npm-debug.log
 
 # os generated files
 .DS_Store
@@ -14,8 +18,8 @@ Thumbs.db
 /tmp/
 
 # node packages
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules/
-npm-debug.log
 
 
 # bower packages
