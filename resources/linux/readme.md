@@ -49,7 +49,7 @@ $ fakeroot dpkg-deb -Zxz --build /path/to/my-application-installer my-installer-
 
 ```bash
 
-$ sudo apt-get install /path/to/my-installer-v1.deb
+$ sudo dpkg --install /path/to/my-installer-v1.deb
 
 ```
 
@@ -57,7 +57,7 @@ $ sudo apt-get install /path/to/my-installer-v1.deb
 
 ```bash
 
-$ sudo apt-get purge my-application
+$ sudo dpkg --purge my-application
 
 ```
 
