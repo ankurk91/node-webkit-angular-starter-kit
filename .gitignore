@@ -1,0 +1,21 @@
+# phpstorm
+.idea
+
+# node logs
+*.log
+
+# os generated files
+.DS_Store
+Thumbs.db
+
+# nw builder
+/build/
+/cache/
+
+# node packages
+node_modules/
+npm-debug.log
+/tmp/
+
+# bower packages
+bower_components/

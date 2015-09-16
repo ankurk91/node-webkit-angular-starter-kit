@@ -1,0 +1,38 @@
+{
+    "name": "node-webkit-angular-app",
+    "description": "A sample node-webkit desktop app with angular js",
+    "version": "0.0.1",
+    "keywords": [
+        "node-webkit"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ank91/node-webkit-angular-starter-kit.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ank91/node-webkit-angular-starter-kit/issues"
+    },
+    "homepage": "https://github.com/ank91/node-webkit-angular-starter-kit",
+    "maintainers": [
+        {
+            "name": "ank91",
+            "web": "http://ank91.github.io"
+        }
+    ],
+    "scripts": {
+        "postinstall": "(cd app && npm install)",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nw app/"
+    },
+    "author": "ank91",
+    "devDependencies": {
+        "nw": "^0.12.1",
+        "gulp": "~3.9.0",
+        "gulp-util": "~3.0.6",
+        "nw-builder": "~2.0.2",
+        "bower": "~1.5.2"
+    },
+    "optionalDependencies": {
+        "gulp-appdmg": "^1.0.2"
+    }
+}

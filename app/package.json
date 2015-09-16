@@ -1,0 +1,46 @@
+{
+    "main": "app.html",
+    "name": "node-webkit-angular-app",
+    "version": "0.0.1",
+    "chromium-args": "--disable-setuid-sandbox",
+    "window": {
+        "title": "Node Webkit",
+        "icon": "img/icon.png",
+        "toolbar": true,
+        "frame": true,
+        "width": 1024,
+        "height": 768,
+        "position": "center",
+        "resizable": true,
+        "min_width": 640,
+        "min_height": 480,
+        "max_width": 1024,
+        "max_height": 768
+    },
+    "platformOverrides": {
+        "win": {
+            "window": {
+                "toolbar": false
+            }
+        },
+        "osx": {
+            "window": {
+                "toolbar": false
+            }
+        },
+        "linux": {
+            "window": {
+                "toolbar": false
+            }
+        }
+    },
+    "webkit": {
+        "plugin": false,
+        "java": false,
+        "page-cache": false
+    },
+    "dependencies": {
+    },
+    "packages": {
+    }
+}
