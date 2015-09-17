@@ -1,7 +1,7 @@
 {
     "main": "app.html",
     "name": "node-webkit-angular-app",
-    "version": "0.1",
+    "version": "0.0.1",
     "chromium-args": "--disable-setuid-sandbox",
     "window": {
         "title": "Node Webkit",

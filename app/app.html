@@ -3,24 +3,31 @@
 <head>
     <meta charset="utf-8">
     <title>Node Webkit</title>
-    <!-- stylesheets -->
+
+    <!-- build:css_vendors -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <!-- endbuild -->
 
-    <!-- javascript-->
-    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+    <!-- build:css_theme -->
+    <link rel="stylesheet" href="css/theme.css">
+    <!-- endbuild -->
+
+    <!-- build:js_vendors -->
     <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <!-- endbuild -->
 
 </head>
-<body ng-app="nwApp">
+<body ng-app="nwApp" ng-strict-di>
 
 <div ui-view></div>
-<!-- angular js files -->
+<!-- build:js_app -->
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/app.config.js"></script>
 <script type="text/javascript" src="js/controllers/app.controller.js"></script>
+<!-- endbuild -->
 </body>
 </html>

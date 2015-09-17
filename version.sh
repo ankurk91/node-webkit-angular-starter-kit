@@ -2,7 +2,8 @@
 
 # Update application version number
 # Usage
-# bash version.sh 2.0
+# bash version.sh 2.0.0
+# Semantic Versioning @http://semver.org/
 
 # Check for param $1
 if [ -z "$1" ]

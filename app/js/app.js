@@ -2,7 +2,8 @@
     'use strict';
     angular
         .module('nwApp', [
-            'ui.router'
+            'ui.router',
+            'ui.bootstrap'
         ]);
 
 })(angular);
