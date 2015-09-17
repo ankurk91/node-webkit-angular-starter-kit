@@ -30,6 +30,7 @@
     "gulp": "~3.9.0",
     "gulp-bower": "0.0.10",
     "gulp-concat": "^2.5.2",
+    "gulp-csslint": "^0.2.0",
     "gulp-html-replace": "^1.4.4",
     "gulp-image": "~1.0.5",
     "gulp-jshint": "^1.11.2",

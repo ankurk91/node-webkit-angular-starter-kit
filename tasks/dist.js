@@ -12,6 +12,7 @@
         sourcemaps = require('gulp-sourcemaps'),
         uglify = require("gulp-uglify"),
         jshint = require("gulp-jshint"),
+        csslint = require('gulp-csslint'),
         jshintStylish = require('jshint-stylish'),
         ngHtml2Js = require('gulp-ng-html2js'),
         htmlreplace = require('gulp-html-replace'),
@@ -115,6 +116,8 @@
 
     gulp.task('dist:styles.theme', ['dist:clean'], function () {
         return gulp.src(paths.app.styles)
+            .pipe(csslint('.csslintrc.json'))
+            .pipe(csslint.reporter())
             .pipe(concat('theme.min.css'))
             .pipe(minifyCSS())
             .pipe(gulp.dest(paths.dist.css))
