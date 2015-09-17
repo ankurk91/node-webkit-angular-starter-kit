@@ -24,7 +24,7 @@
             macCredits: 'resources/osx/credits.html',
             macIcns: 'resources/osx/app-icon.icns',
             macPlist: 'resources/osx/Info.plist',
-            winIco: 'resources/windows/app-icon.ico', //wine should be installed on linux systems to use this feature
+            winIco: 'resources/windows/app-icon.ico', //wine should be installed on linux systems to use this option
             version: '0.12.3', //nw.js version number, using stable
             files: paths.dist,
             platforms: ['win32']

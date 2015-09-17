@@ -11,6 +11,8 @@
         ngAnnotate = require('gulp-ng-annotate'),
         sourcemaps = require('gulp-sourcemaps'),
         uglify = require("gulp-uglify"),
+        jshint = require("gulp-jshint"),
+        jshintStylish = require('jshint-stylish'),
         ngHtml2Js = require('gulp-ng-html2js'),
         htmlreplace = require('gulp-html-replace'),
         minifyHTML = require("gulp-minify-html"),
@@ -65,13 +67,15 @@
         return bower();
     });
 
-    gulp.task('dist:clean', function () {
-        del(paths.dist.base, {force: true})
+    gulp.task('dist:clean', function (cb) {
+        del(paths.dist.base, {force: true},cb)
     });
 
 
     gulp.task('dist:scripts.app', ['dist:clean'], function () {
         return gulp.src(paths.app.scripts)
+            .pipe(jshint('.jshintrc'))
+            .pipe(jshint.reporter(jshintStylish))
             .pipe(sourcemaps.init())
             .pipe(concat('app.min.js'))
             .pipe(ngAnnotate())
@@ -166,6 +170,8 @@
     });
 
 
-    gulp.task('dist', ['bower', 'dist:clean', 'dist:additional', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:styles.theme', 'dist:styles.vendors', 'dist:partials', 'dist:images', 'dist:fonts', 'dist:index']);
+    gulp.task('dist', ['bower', 'dist:clean', 'dist:additional', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:styles.theme', 'dist:styles.vendors', 'dist:partials', 'dist:images', 'dist:fonts', 'dist:index'],function(cb){
+        cb(null)
+    });
 
 })();
