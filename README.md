@@ -38,10 +38,10 @@ $ nw
 * Using [ng-strict-di](https://docs.angularjs.org/api/ng/directive/ngApp)
 
 ### TODO
-* Gulp task for html, css and js
-* Packaging should include min version of css and js 
+* ~~ Gulp task for finalizing html, css and js ~~
+* ~~ Packaging/Building should include min version of css and js ~~ 
+* ~~ Shell script to update version number on all json files ~~
 * Gulp task for packaging app for different platforms
-* Shell script to update version number on all json files
 * Lots of improvements
 
 
