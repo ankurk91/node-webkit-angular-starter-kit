@@ -11,5 +11,5 @@
                 templateUrl: "partials/application.html"
             });
 
-    })
+    });
 })(angular);
