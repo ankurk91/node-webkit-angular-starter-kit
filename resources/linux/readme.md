@@ -73,4 +73,4 @@ $ sudo dpkg --purge my-application
 * [Creating debian binary packages](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/)
 * [dpkg-deb switches](http://manpages.ubuntu.com/manpages/hardy/man1/dpkg-deb.1.html)
 
-***more documentation coming soon***
+

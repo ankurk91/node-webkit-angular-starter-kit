@@ -22,6 +22,7 @@ $ nw app/
 
 ### Packages
 * nw.js, Angular JS, Gulp, Bower, nw-Builder
+* [Angular UI Modules](https://angular-ui.github.io/)
 
 ### Follows
 * [nw-boilerplate](https://github.com/szwacz/nw-boilerplate) 

@@ -1,1 +1,3 @@
-Any information to be shown to user before proceeding to installation
+Any information to be shown to user before proceeding to installation.
+
+Does not support html tag, however a .rtf file can used.
