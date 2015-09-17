@@ -39,6 +39,8 @@ $ nw
 
 ### TODO
 * Gulp task to pack app for different platforms
+* Use [gulp-babel](https://github.com/babel/gulp-babel)
+* Platform detection in gulp tasks
 * Lots of improvements
 
 

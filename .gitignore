@@ -27,3 +27,4 @@ bower_components/
 
 # do not include dist folder
 dist/
+release/
