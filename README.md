@@ -60,6 +60,7 @@ $ nw
 
 ### TODO
 * Gulp task to pack the app for different platforms
+* Test osx build and release on Mac OS X
 * Lots of improvements
 
 

@@ -57,8 +57,6 @@
         });
         jetpack.dir(paths.tmpDir).write(paths.iconDir + manifest.name + '.desktop', desktop);
 
-        return Q();
-
     });
 
     gulp.task('release:linux.64.controlFile', ['release:cleanTmp', 'release:linux.64.copyBuild', 'release:linux.64.additional'], function () {
@@ -78,11 +76,9 @@
             arch: 'amd64'
         });
         jetpack.dir(paths.tmpDir).write('DEBIAN/control', control);
-
-        return Q();
     });
 
-    gulp.task('release:linux.64.createInstaller', ['release:cleanTmp', 'release:linux.64.copyBuild', 'release:linux.64.desktopFile', 'release:linux.64.controlFile'], function () {
+    gulp.task('release:linux.64.createInstaller', ['release:cleanTmp', 'release:linux.64.copyBuild', 'release:linux.64.additional', 'release:linux.64.desktopFile', 'release:linux.64.controlFile'], function () {
 
         var deferred = Q.defer();
 
@@ -104,6 +100,8 @@
         return deferred.promise;
     });
 
-    gulp.task('release:linux64', ['release:cleanTmp', 'release:linux.64.copyBuild', 'release:linux.64.additional', 'release:linux.64.controlFile', 'release:linux.64.desktopFile', 'release:linux.64.createInstaller'])
+    gulp.task('release:linux64', ['release:cleanTmp', 'release:linux.64.copyBuild', 'release:linux.64.additional', 'release:linux.64.controlFile', 'release:linux.64.desktopFile', 'release:linux.64.createInstaller'], function (cb) {
+        cb(null)
+    })
 
 })();

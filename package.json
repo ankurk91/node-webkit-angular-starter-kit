@@ -49,6 +49,6 @@
     "yargs": "^3.25.0"
   },
   "optionalDependencies": {
-    "gulp-appdmg": "^1.0.2"
+    "appdmg": "^0.3.4"
   }
 }
