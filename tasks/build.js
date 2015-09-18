@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    //@https://github.com/nwjs/nw-builder/
+
     //include required plugins
     var gulp = require('gulp'),
         gutil = require('gulp-util'),
@@ -19,7 +21,7 @@
     gulp.task('build', function () {
 
         var nw = new NwBuilder({
-            appName: null,//auto get from package.json
+            appName: null,  //auto get from package.json
             appVersion: null, //auto get from package.json
             macCredits: 'resources/osx/credits.html',
             macIcns: 'resources/osx/app-icon.icns',
