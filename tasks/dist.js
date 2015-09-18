@@ -167,9 +167,10 @@
     });
 
     gulp.task('dist:additional', ['dist:clean'], function () {
-        return gulp.src(paths.app.additional)
+        var stream = gulp.src(paths.app.additional)
             .pipe(gulp.dest(paths.dist.base))
-            .on('error', gutil.log)
+            .on('error', gutil.log);
+        return stream;
     });
 
 

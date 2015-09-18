@@ -2,9 +2,9 @@
 Version=1.0
 Type=Application
 Encoding=UTF-8
-Name={{productName}}
+Name={{name}}
 Comment={{description}}
-Exec=/opt/{{name}}/nw
+Exec=/opt/{{name}}/{{name}}
 Icon=/opt/{{name}}/icon.png
 Terminal=false
-Categories=Application;
+Categories=Application;Other

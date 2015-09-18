@@ -7,7 +7,6 @@ If you are packaging on Linux , you want to install [wine](http://wiki.winehq.or
 
 ## TODO
 * Write more instructions about this process
-* Write a gulp task to automate this process
 
 
 ## Online help

@@ -62,7 +62,6 @@ $ sudo dpkg --purge my-application
 ```
 
 ## TODO
-* Write a gulp to automate this process
 * Installing application to /usr/bin 
 * Create rpm package using [fpm](https://github.com/jordansissel/fpm)
 

@@ -1,4 +1,4 @@
-# node-webkit-angular-starter-kit
+# [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit
 
 
 ## Target development machine
@@ -32,36 +32,34 @@ $ nw
 ```
 
 ## Folder structure
-| Folder / File                 | Description                          |
+| Folder / File Path                | Description                          |
 | ----------------------------- | :------------------------------------|
 | app                           | Contains js,css,html for your app, this is where your write your code                        |
-| app/node_modules              | Stores node_packages to be packed with app                      |
-| app/package.json              | files required to run nw.js apps , defines dependencies also                        |
+| app/node_modules              | Stores node packages to be packed with app                      |
+| app/package.json              | File required to run nw.js apps , defines dependencies also , no devDependencies                        |
 | bower_components              | Stores your front end dependencies                            |
-| cache                         | used by nw-builder                             |   
-| dist                          | Stores minified version of js,css,html ready to pack                            |   
+| cache                         | Used by nw-builder                             |   
+| dist                          | Stores minified version of js,css,html. Ready to pack, used by nw-builder                             |   
 | node_modules                  | Stores node package for development only                             |   
 | release                       | Stores installer for different platforms                             |   
 | resources                     | Stores installer related files to used by nw-builder                             |   
-| tasks                         | gulp tasks                          |   
+| tasks                         | Gulp tasks breakdown                         |   
 | tmp                           | Used by nw-builder during packaging                            |   
-| package.json                  | defined dev dependencies                             |   
+| package.json                  | Defined devDependencies only, application version , scripts ,etc.                            |   
 | version.sh                    | Use this shell script to update app version number to different .json files                             |   
+
 
 ### Packages
 * nw.js, Angular JS, Gulp, Bower, nw-Builder
 * [Angular UI Modules](https://angular-ui.github.io/)
 
-### Follows
-* [nw-boilerplate](https://github.com/szwacz/nw-boilerplate) 
-* [angular styleguide](https://github.com/johnpapa/angular-styleguide) 
 
 ### Notes for angular js devs
-* Using [ng-strict-di](https://docs.angularjs.org/api/ng/directive/ngApp)
+* Use [ng-strict-di](https://docs.angularjs.org/api/ng/directive/ngApp)
+* [Angular styleguide](https://github.com/johnpapa/angular-styleguide) 
 
 ### TODO
 * Gulp task to pack the app for different platforms
-* Platform detection in gulp tasks
 * Lots of improvements
 
 

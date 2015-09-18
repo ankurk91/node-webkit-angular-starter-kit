@@ -15,10 +15,10 @@
     };
 
     var paths = {
-        dist: ['dist/**/*.*']
+        dist: ['dist/**/*']
     };
 
-    gulp.task('build', function () {
+    gulp.task('build', function (cb) {
 
         var nw = new NwBuilder({
             appName: null,  //auto get from package.json
@@ -26,10 +26,10 @@
             macCredits: 'resources/osx/credits.html',
             macIcns: 'resources/osx/app-icon.icns',
             macPlist: 'resources/osx/Info.plist',
-            winIco: 'resources/windows/app-icon.ico', //wine should be installed on linux systems to use this option
+            //winIco: 'resources/windows/app-icon.ico', //wine should be installed on linux systems to use this option
             version: '0.12.3', //nw.js version number, using stable
             files: paths.dist,
-            platforms: ['win32']
+            platforms: ['linux64']
         });
 
         // logging all messages
@@ -43,6 +43,8 @@
         }).catch(function (error) {
             gutil.log('nw-builder :', gutil.colors.red(error));
         });
+
+        cb(null);
 
     });
 

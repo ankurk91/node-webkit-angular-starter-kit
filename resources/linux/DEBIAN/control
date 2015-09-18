@@ -1,8 +1,9 @@
 Package: {{name}}
+Replaces: {{name}}
 Version: {{version}}
+Architecture: {{arch}}
 Maintainer: {{author}}
-Priority: optional
-Architecture: amd64
 Installed-Size: {{size}}
-Homepage: http://www.example.com/product
+Priority: optional
+Homepage: {{homepage}}
 Description: {{description}}
