@@ -1,7 +1,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('nwApp').config(function ($stateProvider, $urlRouterProvider) {
+    angular.module('nwApp').config(['$stateProvider','$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/home");
 
@@ -11,5 +11,5 @@
                 templateUrl: "partials/home.html"
             });
 
-    });
+    }]);
 })(angular);
