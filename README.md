@@ -60,7 +60,7 @@ $ nw
 
 ### TODO
 * Gulp task to pack the app for different platforms
-# nw application menus
+* nw application menus
 * Angular sample app using best practices
 * Test osx build and release on Mac OS X
 * Lots of improvements

@@ -40,7 +40,7 @@ Make sure all sub directories of 'my-application-installer' have file permission
 
 ```bash
 
-$ fakeroot dpkg-deb -Zxz --build /path/to/my-application-installer my-installer-v1.deb
+$ fakeroot dpkg-deb -Zxz --build /path/to/my-application-installer my-installer-1.0.0_amd64.deb
 
 
 ```
@@ -49,7 +49,7 @@ $ fakeroot dpkg-deb -Zxz --build /path/to/my-application-installer my-installer-
 
 ```bash
 
-$ sudo dpkg --install /path/to/my-installer-v1.deb
+$ sudo dpkg --install /path/to/my-installer-1.0.0_amd64.deb
 
 ```
 
