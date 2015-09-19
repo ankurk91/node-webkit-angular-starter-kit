@@ -16,24 +16,24 @@
     manifest = jetpack.read('./package.json', 'json');
 
     paths = {
-        releaseDir: './release/osx/',
+        releaseDir: jetpack.dir('./release/osx/'),
         buildDir: './build/' + manifest.name + '/osx64/**/*',
         tmpDir: './tmp',
-        targetDir: jetpack.dir('./tmp').cwd(manifest.name + '.app').path()
+        buildTargetDir: jetpack.dir('./tmp').cwd(manifest.name + '.app')
     };
 
     gulp.task('release:cleanTmp', function (cb) {
         del(paths.tmpDir, {force: true}, cb)
     });
 
-    gulp.task('release:osx.copyBuild', ['release:cleanTmp'], function () {
+    gulp.task('release:osx.64.copyBuild', ['release:cleanTmp'], function () {
         var stream = gulp.src(paths.buildDir)
-            .pipe(gulp.dest(paths.targetDir))
+            .pipe(gulp.dest(paths.buildTargetDir.path()))
             .on('error', gutil.log);
         return stream;
     });
 
-    gulp.task('release:osx.plistFile', ['release:cleanTmp'], function () {
+    gulp.task('release:osx.64.plistFile', ['release:cleanTmp'], function () {
         var plist = jetpack.read('./resources/osx/Info.plist');
 
         plist = utils.replace(plist, {
@@ -43,20 +43,21 @@
         jetpack.dir(paths.tmpDir).write('Contents/Info.plist', plist);
     });
 
-    gulp.task('release:osx.jsonFile', ['release:cleanTmp'], function () {
+    gulp.task('release:osx.64.jsonFile', ['release:cleanTmp'], function () {
 
         var dmgManifest = jetpack.read('./resources/osx/appdmg.json');
 
+        //appdmg.json needs full path
         dmgManifest = utils.replace(dmgManifest, {
             productName: manifest.name,
-            appPath: paths.targetDir,
+            appPath: paths.buildTargetDir.path(),
             dmgIcon: jetpack.path("./resources/osx/dmg-icon.icns"),
             dmgBackground: jetpack.path("./resources/osx/dmg-background.png")
         });
-        jetpack.dir(paths.tmpDir).cwd(manifest.name + '.app').write('appdmg.json', dmgManifest);
+        paths.buildTargetDir.write('appdmg.json', dmgManifest);
     });
 
-    gulp.task('release:osx.createInstaller', ['release:cleanTmp', 'release:osx.jsonFile', 'release:osx.plistFile', 'release:osx.copyBuild'], function () {
+    gulp.task('release:osx.64.createInstaller', ['release:cleanTmp', 'release:osx.64.jsonFile', 'release:osx.64.plistFile', 'release:osx.64.copyBuild'], function () {
         var deferred = Q.defer();
         var appdmg = require('appdmg');
 
@@ -64,22 +65,23 @@
 
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
+        //appdmg needs full path
         appdmg({
-            source: jetpack.dir(paths.tmpDir).path('appdmg.json'),
-            target: jetpack.dir(paths.releaseDir).path(dmgName)
+            source: paths.buildTargetDir.path('appdmg.json'),
+            target: paths.releaseDir.path(dmgName)
         })
             .on('error', function (error) {
                 gutil.log('Error :', gutil.colors.red(error));
             })
             .on('finish', function () {
-                gutil.log('Success :', gutil.colors.green('DMG is ready'));
+                gutil.log('Success :', gutil.colors.green('DMG is ready -' + dmgName));
                 deferred.resolve();
             });
 
         return deferred.promise;
     });
 
-    gulp.task('release:osx', ['release:cleanTmp', 'release:osx.copyBuild', 'release:osx.jsonFile', 'release:osx.plistFile', 'release:osx.createInstaller'], function (cb) {
+    gulp.task('release:osx64', ['release:cleanTmp', 'release:osx.64.copyBuild', 'release:osx.64.jsonFile', 'release:osx.64.plistFile', 'release:osx.64.createInstaller'], function (cb) {
         cb(null)
     })
 

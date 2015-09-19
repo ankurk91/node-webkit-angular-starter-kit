@@ -24,57 +24,55 @@
     // define paths
     var paths = {
         dist: {
-            base: 'dist',
-            js: "dist/js",
-            css: "dist/css",
-            img: "dist/img",
-            fonts: "dist/fonts"
+            baseDir: './dist',
+            js: "./dist/js",
+            css: "./dist/css",
+            img: "./dist/img",
+            fonts: "./dist/fonts"
         },
-        app: {
-            base: "app",
-            index: "app.html",
+        src: {
+            baseDir: "./app",
             scripts: [
                 "app/js/app.js",
                 "app/js/**/*.js"
             ],
-            styles: ["app/css/**/*.css"],
-            partials: ["app/partials/**/*.html"],
-            images: ["app/img/**/*.{png,jpg,jpeg,gif}"],
+            styles: ["./app/css/**/*.css"],
+            partials: ["./app/partials/**/*.html"],
+            images: ["./app/img/**/*.{png,jpg,jpeg,gif}"],
             additional: [
-                'app/package.json',
-                'app/node_modules/**/*.*'
+                './app/package.json',
+                './app/node_modules/**/*'
             ]
         },
         vendors: {
             scripts: [
-                "bower_components/angular/angular.js",
-                "bower_components/angular-ui-router/release/angular-ui-router.js",
-                "bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
-                "bower_components/underscore/underscore.js"
+                "./bower_components/angular/angular.js",
+                "./bower_components/angular-ui-router/release/angular-ui-router.js",
+                "./bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+                "./bower_components/underscore/underscore.js"
             ],
             styles: [
-                "bower_components/bootstrap/dist/css/bootstrap.css",
-                "bower_components/font-awesome/css/font-awesome.css"
+                "./bower_components/bootstrap/dist/css/bootstrap.css",
+                "./bower_components/font-awesome/css/font-awesome.css"
             ],
             fonts: [
-                "bower_components/font-awesome/fonts/*.*"
+                "./bower_components/font-awesome/fonts/*.*"
             ]
-
 
         }
     };
 
-    gulp.task('bower', function () {
+    gulp.task('bower', function (cb) {
         return bower();
     });
 
     gulp.task('dist:clean', function (cb) {
-        del(paths.dist.base, {force: true},cb)
+        del(paths.dist.baseDir, {force: true},cb)
     });
 
 
     gulp.task('dist:scripts.app', ['dist:clean'], function () {
-        return gulp.src(paths.app.scripts)
+        return gulp.src(paths.src.scripts)
             .pipe(jshint('.jshintrc'))
             .pipe(jshint.reporter(jshintStylish))
             .pipe(sourcemaps.init())
@@ -99,7 +97,7 @@
     });
 
     gulp.task('dist:partials', ['dist:clean'], function () {
-        return gulp.src(paths.app.partials)
+        return gulp.src(paths.src.partials)
             .pipe(minifyHTML({
                 loose: true
             }))
@@ -115,7 +113,7 @@
     });
 
     gulp.task('dist:styles.theme', ['dist:clean'], function () {
-        return gulp.src(paths.app.styles)
+        return gulp.src(paths.src.styles)
             .pipe(csslint('.csslintrc.json'))
             .pipe(csslint.reporter())
             .pipe(concat('theme.min.css'))
@@ -136,7 +134,7 @@
 
 
     gulp.task('dist:images', ['dist:clean'], function () {
-        return gulp.src(paths.app.images)
+        return gulp.src(paths.src.images)
             .pipe(image())
             .pipe(gulp.dest(paths.dist.img))
             .on('error', gutil.log)
@@ -149,7 +147,7 @@
     });
 
     gulp.task('dist:index', ['dist:clean'], function () {
-        return gulp.src(paths.app.base + '/' + paths.app.index)
+        return gulp.src(paths.src.baseDir + '/index.html')
             .pipe(htmlreplace({
                 css_vendors: "css/vendors.min.css",
                 css_theme: "css/theme.min.css",
@@ -162,13 +160,13 @@
             .pipe(minifyHTML({
                 loose: true
             }))
-            .pipe(gulp.dest(paths.dist.base))
+            .pipe(gulp.dest(paths.dist.baseDir))
             .on('error', gutil.log)
     });
 
     gulp.task('dist:additional', ['dist:clean'], function () {
-        var stream = gulp.src(paths.app.additional)
-            .pipe(gulp.dest(paths.dist.base))
+        var stream = gulp.src(paths.src.additional)
+            .pipe(gulp.dest(paths.dist.baseDir))
             .on('error', gutil.log);
         return stream;
     });

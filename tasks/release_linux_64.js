@@ -1,5 +1,6 @@
 (function () {
 
+    //works only on ubuntu linux because of dpkg-deb
     'use strict';
 
     var manifest, paths;

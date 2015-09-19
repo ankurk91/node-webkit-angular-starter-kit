@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Update application version number
-# Usage
-# bash version.sh 2.0.0
-# Semantic Versioning @http://semver.org/
+# Description : Update application version number in json files
+# Usage : bash version.sh 2.0.0
+# Help : Semantic Versioning @http://semver.org/
+# Tested on Ubuntu 14.04 x64
 
 # Check for param $1
 if [ -z "$1" ]

@@ -13,5 +13,8 @@ gulp release:linux64
 
 ```
 
-## Notes
-* It is recommended to build and pack app on same platform for example : if you want an installer for MAC then you should run gulp task on Max OS X 
+## Remember
+* Linux (deb) installer can be created on Ubuntu only
+* OSX (dmg) installer can be created on Mac OS X only
+* Windows installer (exe) needs Inno Setup pre-installed
+* Windows installer can be created on Linux or Mac with help of Wine
