@@ -93,7 +93,7 @@
                     gutil.log('Gulp error :', gutil.colors.red(error));
                     gutil.log('System error :', gutil.colors.red(stderr));
                 } else {
-                    gutil.log('Success :', gutil.colors.green('Installer is ready - ' + packName));
+                    gutil.log('Success :', gutil.colors.green('DEB is ready - ' + packName));
                 }
                 deferred.resolve();
             });

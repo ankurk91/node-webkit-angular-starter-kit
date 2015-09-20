@@ -1,9 +1,9 @@
 {
-    "curly": true,
-    "eqeqeq": true,
-    "undef": true,
-    "browser"       : true,
-    "globals": {
-        "angular" : true
-    }
+  "curly": true,
+  "eqeqeq": true,
+  "undef": true,
+  "browser": true,
+  "globals": {
+    "angular": true
+  }
 }

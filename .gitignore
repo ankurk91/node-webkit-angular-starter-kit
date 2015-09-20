@@ -1,7 +1,7 @@
 # https://github.com/github/gitignore
 # https://www.gitignore.io/
 
-# phpstorm
+# phpstorm, webstorm
 .idea
 
 # logs
@@ -9,7 +9,7 @@ logs/
 *.log
 npm-debug.log
 
-# os generated files
+# OS generated files
 .DS_Store
 Thumbs.db
 

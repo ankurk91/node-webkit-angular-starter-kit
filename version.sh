@@ -13,7 +13,7 @@ if [ -z "$1" ]
 fi
 
 echo Current version is :
-grep -Po '(?<="version": ")[^"]*' package.json
+grep -Po '(?<="version": ")[^"]*' ./package.json
 echo ""
 echo Update to version :
 echo $1

@@ -36,6 +36,7 @@
     gulp.task('release:osx.64.plistFile', ['release:cleanTmp'], function () {
         var plist = jetpack.read('./resources/osx/Info.plist');
 
+        //todo add more dynamic options to plist file
         plist = utils.replace(plist, {
             productName: manifest.name,
             version: manifest.version

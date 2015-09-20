@@ -1,7 +1,7 @@
 ## Creating a .deb installer for Ubuntu OS
 
 
-We wil use ```dpkg-deb``` , an handy tool comes pre-installed on ubuntu.
+We wil use ```dpkg-deb``` , an handy tool comes pre-installed on Ubuntu.
 
 Lets organize your files and folder first. See the tree below.
 
@@ -62,7 +62,7 @@ $ sudo dpkg --purge my-application
 ```
 
 ## TODO
-* Installing application to /usr/bin 
+* Installing application to /usr/bin
 * Create rpm package using [fpm](https://github.com/jordansissel/fpm)
 
 
