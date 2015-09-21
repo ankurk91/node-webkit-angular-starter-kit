@@ -11,12 +11,10 @@
     var nwBuilderOptions  = {
         platforms : ['win32', 'win64', 'osx32', 'osx64', 'linux32', 'linux64'],
         buildType : 'default', // versioned
-        version : '0.12.3' //nw.js version number, using stable
+        version : '0.12.3', //nw.js version number, using stable
+        files : ['dist/**/*']
     };
 
-    var paths = {
-        distDir: ['dist/**/*']
-    };
 
     gulp.task('build', function (cb) {
 
@@ -28,7 +26,7 @@
             macPlist: 'resources/osx/Info.plist',
             //winIco: 'resources/windows/app-icon.ico', //wine should be installed on linux systems to use this option
             version: nwBuilderOptions.version,
-            files: paths.distDir,
+            files: nwBuilderOptions.files,
             platforms: ['linux64']
         });
 

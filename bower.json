@@ -3,7 +3,6 @@
   "dependencies": {
     "angular": "1.4.5",
     "angular-bootstrap": "~0.13.4",
-    "angular-growl-v2": "~0.7.5",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.4.0",

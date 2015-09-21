@@ -26,12 +26,11 @@
         del(paths.tmpDir, {force: true}, cb)
     });
 
-    gulp.task('release:osx.64.copyBuild', ['release:cleanTmp'], function (cb) {
-        return gulp.src(paths.buildDir)
+    gulp.task('release:osx.64.copyBuild', ['release:cleanTmp'], function () {
+        var stream = gulp.src(paths.buildDir)
             .pipe(gulp.dest(paths.buildTargetDir.path()))
-            .on('end', cb || function () {
-            })
             .on('error', gutil.log);
+        return stream;
     });
 
     gulp.task('release:osx.64.plistFile', ['release:cleanTmp'], function () {

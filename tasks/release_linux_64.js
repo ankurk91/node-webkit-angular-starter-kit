@@ -34,20 +34,18 @@
     });
 
     gulp.task('release:linux.64.copyBuild', ['release:cleanTmp'], function (cb) {
-        return gulp.src(paths.buildDir)
+        var stream = gulp.src(paths.buildDir)
             .pipe(gulp.dest(paths.tmpDir + '/' + paths.targetDir))
-            .on('end', cb || function () {
-            })
             .on('error', gutil.log);
+        return stream;
 
     });
 
     gulp.task('release:linux.64.additional', ['release:cleanTmp', 'release:linux.64.copyBuild'], function (cb) {
-        return gulp.src(paths.additional)
+        var stream = gulp.src(paths.additional)
             .pipe(gulp.dest(paths.tmpDir + '/' + paths.targetDir))
-            .on('end', cb || function () {
-            })
             .on('error', gutil.log);
+        return stream;
     });
 
     gulp.task('release:linux.64.desktopFile', ['release:cleanTmp'], function () {

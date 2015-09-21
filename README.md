@@ -17,7 +17,7 @@ $ cd node-webkit-angular-starter-kit
 
 $ sudo npm install -g bower
 
-$ bower install --allow-root
+$ bower install 
 
 $ sudo npm install -g nw
 

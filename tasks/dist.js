@@ -85,16 +85,15 @@
     });
 
 
-    gulp.task('dist:scripts.vendors', ['dist:clean', 'bower'], function (cb) {
-        return gulp.src(paths.vendors.scripts)
+    gulp.task('dist:scripts.vendors', ['dist:clean', 'bower'], function () {
+        var stream = gulp.src(paths.vendors.scripts)
             .pipe(sourcemaps.init())
             .pipe(concat('vendors.min.js'))
             .pipe(uglify())
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(paths.dist.js))
-            .on('end', cb || function () {
-            })
             .on('error', gutil.log);
+        return stream;
     });
 
     gulp.task('dist:partials', ['dist:clean'], function () {
@@ -124,14 +123,13 @@
     });
 
 
-    gulp.task('dist:styles.vendors', ['dist:clean', 'bower'], function (cb) {
-        return gulp.src(paths.vendors.styles)
+    gulp.task('dist:styles.vendors', ['dist:clean', 'bower'], function () {
+        var stream = gulp.src(paths.vendors.styles)
             .pipe(concat('vendors.min.css'))
             .pipe(minifyCSS())
             .pipe(gulp.dest(paths.dist.css))
-            .on('end', cb || function () {
-            })
             .on('error', gutil.log);
+        return stream;
 
     });
 
@@ -143,12 +141,11 @@
             .on('error', gutil.log)
     });
 
-    gulp.task('dist:fonts', ['dist:clean', 'bower'], function (cb) {
-        return gulp.src(paths.vendors.fonts)
+    gulp.task('dist:fonts', ['dist:clean', 'bower'], function () {
+        var stream = gulp.src(paths.vendors.fonts)
             .pipe(gulp.dest(paths.dist.fonts))
-            .on('end', cb || function () {
-            })
             .on('error', gutil.log);
+        return stream;
 
     });
 
@@ -170,12 +167,11 @@
             .on('error', gutil.log)
     });
 
-    gulp.task('dist:additional', ['dist:clean'], function (cb) {
-        return gulp.src(paths.src.additional)
+    gulp.task('dist:additional', ['dist:clean'], function () {
+        var stream = gulp.src(paths.src.additional)
             .pipe(gulp.dest(paths.dist.baseDir))
-            .on('end', cb || function () {
-            })
             .on('error', gutil.log);
+        return stream;
     });
 
 
