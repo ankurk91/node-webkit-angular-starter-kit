@@ -9,6 +9,6 @@
 * Automatic codesign
 
 ## Online help & tools
-[gulp-app-dmg](https://www.npmjs.com/package/gulp-appdmg)
-[Online icns file generator](https://iconverticons.com/online/)
+* [gulp-app-dmg](https://www.npmjs.com/package/gulp-appdmg)
+* [Online icns file generator](https://iconverticons.com/online/)
 
