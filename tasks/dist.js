@@ -33,11 +33,13 @@
         src: {
             baseDir: "./app",
             scripts: [
-                "app/js/app.js",
-                "app/js/**/*.js"
+                "./app/app.module.js",
+                "./app/app.config.js",
+                "./app/app-ctrl.js",
+                "./app/views/**/*.js"
             ],
             styles: ["./app/css/**/*.css"],
-            partials: ["./app/partials/**/*.html"],
+            partials: ["./app/views/**/*.html"],
             images: ["./app/img/**/*.{png,jpg,jpeg,gif}"],
             additional: [
                 './app/package.json',
@@ -103,7 +105,7 @@
             }))
             .pipe(ngHtml2Js({
                 moduleName: 'nwApp',
-                prefix: 'partials/',
+                prefix: 'views/',
                 declareModule: false
             }))
             .pipe(concat('partials.min.js'))

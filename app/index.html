@@ -21,14 +21,21 @@
     <!-- endbuild -->
 
 </head>
-<body ng-controller="MainController as main">
+<body ng-controller="AppController as main">
+
+<a ui-sref="home">Home</a>
+<a ui-sref="about">About</a>
 
 <div ui-view></div>
 
 <!-- build:js_app -->
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/app.config.js"></script>
-<script type="text/javascript" src="js/controllers/main-ctrl.js"></script>
+<script type="text/javascript" src="app.module.js"></script>
+<script type="text/javascript" src="app.config.js"></script>
+<script type="text/javascript" src="app-ctrl.js"></script>
+
+
+<script type="text/javascript" src="views/home/home-ctrl.js"></script>
+<script type="text/javascript" src="views/about/about-ctrl.js"></script>
 <!-- endbuild -->
 </body>
 </html>
