@@ -1,11 +1,16 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 ; http://www.jrsoftware.org/isinfo.php
 
-#define MyAppName "Node webkit App"
-#define MyAppVersion "0.1"
-#define MyAppPublisher "My Company, Inc."
-#define MyAppURL "http://www.example.com/"
-#define MyAppExeName "MyProg.exe"
+; {{ }} will replaced by gulp task at runtime, will get from package.json
+#define MyAppName "{{appName}}"
+#define MyAppVersion "{{appVersion}}"
+#define MyAppPublisher "{{appPublisher}}"
+#define MyAppURL "{{appUrl}}"
+#define MyAppExeName "{{appExeName}}"
+#define OutputBaseFilename "{{setupFileName}}"
+#define OutputDir "{{outputDir}}"
+#define AppSourceDir "./source/*"
+
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -23,27 +28,29 @@ DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 DisableStartupPrompt=yes
-OutputBaseFilename=setup
-Compression=lzma2/max
+Compression=lzma2/ultra
 SolidCompression=yes
 SetupIconFile=setup-icon.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
+LicenseFile=license.txt
 InfoBeforeFile=info-before-setup.txt
 PrivilegesRequired=admin
 ; 164x314 pixel bitmap image
 WizardImageFile=wizard-image.bmp
 ; 55x58 pixel bitmap image
 WizardSmallImageFile=wizard-image-small.bmp
+OutputBaseFilename={#OutputBaseFilename}
+OutputDir = {#OutputDir}
 
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
+; Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "build\app-name\win32\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: {#AppSourceDir}; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

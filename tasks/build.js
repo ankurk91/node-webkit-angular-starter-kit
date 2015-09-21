@@ -12,7 +12,7 @@
         platforms : ['win32', 'win64', 'osx32', 'osx64', 'linux32', 'linux64'],
         buildType : 'default', // versioned
         version : '0.12.3', //nw.js version number, using stable
-        files : ['dist/**/*']
+        files : ['./dist/**/*']
     };
 
 

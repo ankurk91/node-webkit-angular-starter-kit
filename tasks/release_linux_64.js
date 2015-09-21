@@ -21,7 +21,6 @@
         releaseDir: './release/linux/',
         tmpDir: './tmp',
         buildDir: './build/' + manifest.name + '/linux64/**/*',
-        iconDir: 'usr/share/applications/',
         targetDir: 'opt/' + manifest.name,
         additional: [
             './dist/img/icon.png'
@@ -57,7 +56,7 @@
             version: manifest.version,
             author: manifest.author
         });
-        jetpack.dir(paths.tmpDir).write(paths.iconDir + manifest.name + '.desktop', desktop);
+        jetpack.dir(paths.tmpDir).write('usr/share/applications/' + manifest.name + '.desktop', desktop);
 
     });
 

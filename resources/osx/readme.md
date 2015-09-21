@@ -1,5 +1,8 @@
-## Creating installer for Mac OS X
+## Creating .DMG installer for Mac OS X
 
+
+## Notes
+*  ```appdmg``` runs only on Mac OS
 
 ## TODO
 * Create an installer and test it on Mac

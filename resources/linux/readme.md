@@ -36,7 +36,7 @@ Make sure all sub directories of 'my-application-installer' have file permission
 * DEBIAN/control 
 
 
-## Command to create installer
+## Command to create debian installer
 
 ```bash
 
@@ -63,6 +63,7 @@ $ sudo dpkg --purge my-application
 
 ## TODO
 * Installing application to /usr/bin
+* Add ```copyright``` and ```changelog.Debian``` to installer (/usr/share/doc/my-application)
 * Create rpm package using [fpm](https://github.com/jordansissel/fpm)
 
 

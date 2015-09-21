@@ -62,7 +62,7 @@
         }
     };
 
-    gulp.task('bower', function (cb) {
+    gulp.task('bower', function () {
         return bower();
     });
 
