@@ -33,12 +33,19 @@
         return stream;
     });
 
+    gulp.task('release:osx.64.icnsFile', ['release:cleanTmp'], function () {
+        var stream = gulp.src('./resources/osx/app-icon.icns')
+            .pipe(gulp.dest(paths.buildTargetDir.path('Contents/Resources/')))
+            .on('error', gutil.log);
+        return stream;
+    });
+
     gulp.task('release:osx.64.plistFile', ['release:cleanTmp'], function () {
         var plist = jetpack.read('./resources/osx/Info.plist');
 
-        //todo add more dynamic options to plist file
         plist = utils.replace(plist, {
             productName: manifest.name,
+            exeName: manifest.name,
             version: manifest.version
         });
         jetpack.dir(paths.tmpDir).write('Contents/Info.plist', plist);

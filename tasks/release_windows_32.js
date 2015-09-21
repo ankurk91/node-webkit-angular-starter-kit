@@ -70,16 +70,13 @@
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
         //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline
-        childProcess.exec('iscc.exe /Qp ' + jetpack.dir(paths.tmpDir).path('setup-32.iss'),
-            function (error, stdout, stderr) {
-                if (error || stderr) {
-                    gutil.log('Gulp error :', gutil.colors.red(error));
-                    gutil.log('System error :', gutil.colors.red(stderr));
-                } else {
-                    gutil.log('Success :', gutil.colors.green('EXE is ready -' + manifest.name + '_' + manifest.version + '.exe'));
-                }
-                deferred.resolve();
-            });
+        var process = childProcess.spawn('iscc.exe /Qp ' + jetpack.dir(paths.tmpDir).path('setup-32.iss'));
+        process.stdout.pipe(process.stdout);
+        process.stderr.pipe(process.stderr);
+        process.on('close', function () {
+            gutil.log('Success :', gutil.colors.green('EXE is ready -' + manifest.name + '_' + manifest.version + '.exe'));
+            deferred.resolve();
+        });
 
         return deferred.promise;
     });

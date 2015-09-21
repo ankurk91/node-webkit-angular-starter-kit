@@ -7,9 +7,9 @@
 	<key>CFBundleDisplayName</key>
 	<string>{{productName}}</string>
 	<key>CFBundleExecutable</key>
-	<string>nwjs</string>
+	<string>{{exeName}}</string>
 	<key>CFBundleIconFile</key>
-	<string>icon.icns</string>
+	<string>app-icon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.intel.nw</string>
 	<key>CFBundleInfoDictionaryVersion</key>

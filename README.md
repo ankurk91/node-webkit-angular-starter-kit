@@ -3,8 +3,8 @@
 
 ## Target development machine
 * Ubuntu 14.04 x64
-* node v0.12.7
-* npm v2.11.3
+* node 0.12.7
+* npm 2.11.3
 * nw.js 0.12.3
 
 
@@ -62,6 +62,7 @@ $ nw
 ### TODO
 * Angular sample app using best practices
 * Test build and pack gulp tasks
+* Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Lots of improvements
 
 
