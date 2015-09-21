@@ -14,6 +14,7 @@
         jshint = require("gulp-jshint"),
         csslint = require('gulp-csslint'),
         jshintStylish = require('jshint-stylish'),
+        htmlhint = require("gulp-htmlhint"),
         ngHtml2Js = require('gulp-ng-html2js'),
         htmlreplace = require('gulp-html-replace'),
         minifyHTML = require("gulp-minify-html"),
@@ -100,6 +101,8 @@
 
     gulp.task('dist:partials', ['dist:clean'], function () {
         return gulp.src(paths.src.partials)
+            .pipe(htmlhint({"doctype-first":false}))
+            .pipe(htmlhint.reporter())
             .pipe(minifyHTML({
                 loose: true
             }))
@@ -151,8 +154,10 @@
 
     });
 
-    gulp.task('dist:index', ['dist:clean'], function () {
+    gulp.task('dist:indexFile', ['dist:clean'], function () {
         return gulp.src(paths.src.baseDir + '/index.html')
+            .pipe(htmlhint())
+            .pipe(htmlhint.reporter())
             .pipe(htmlreplace({
                 css_vendors: "css/vendors.min.css",
                 css_theme: "css/theme.min.css",
@@ -177,7 +182,7 @@
     });
 
 
-    gulp.task('dist', ['bower', 'dist:clean', 'dist:additional', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:styles.theme', 'dist:styles.vendors', 'dist:partials', 'dist:images', 'dist:fonts', 'dist:index'], function (cb) {
+    gulp.task('dist', ['bower', 'dist:clean', 'dist:additional', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:styles.theme', 'dist:styles.vendors', 'dist:partials', 'dist:images', 'dist:fonts', 'dist:indexFile'], function (cb) {
         cb(null)
     });
 

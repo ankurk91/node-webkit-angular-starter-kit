@@ -34,6 +34,7 @@
     "gulp-concat": "^2.5.2",
     "gulp-csslint": "^0.2.0",
     "gulp-html-replace": "^1.4.4",
+    "gulp-htmlhint": "^0.3.0",
     "gulp-image": "~1.0.5",
     "gulp-jshint": "^1.11.2",
     "gulp-minify-css": "^1.0.0",

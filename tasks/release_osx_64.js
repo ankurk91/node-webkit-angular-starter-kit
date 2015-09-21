@@ -89,7 +89,7 @@
         return deferred.promise;
     });
 
-    gulp.task('release:osx64', ['release:cleanTmp', 'release:osx.64.copyBuild', 'release:osx.64.jsonFile', 'release:osx.64.plistFile', 'release:osx.64.createInstaller'], function (cb) {
+    gulp.task('release:osx64', ['release:cleanTmp', 'release:osx.64.copyBuild', 'release:osx.64.jsonFile', 'release:osx.64.plistFile', 'release:osx.64.icnsFile', 'release:osx.64.createInstaller'], function (cb) {
         cb(null)
     })
 
