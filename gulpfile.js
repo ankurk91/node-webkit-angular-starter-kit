@@ -1,10 +1,13 @@
 'use strict';
 
 var gulp = require('gulp'),
+    gutil = require("gulp-util"),
     del = require('del');
 
-gulp.task('cleanAll', function (cb) {
-    del(['./dist','./tmp','./release','./npm-debug.log'], {force: true}, cb)
+gulp.task('cleanAll', function () {
+    del(['./dist','./tmp','./release','./npm-debug.log'], {force: true}).then(function(paths){
+        gutil.log('Success :', gutil.colors.green('Cleaning completed.'));
+    });
 });
 
 require('./tasks/dist.js');

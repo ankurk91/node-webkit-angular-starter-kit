@@ -70,7 +70,7 @@
     });
 
     gulp.task('dist:clean', function (cb) {
-        del(paths.dist.baseDir, {force: true}, cb)
+        del(paths.dist.baseDir, {force: true}).then(cb(null))
     });
 
 

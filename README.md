@@ -32,6 +32,20 @@ $ nw
 
 ```
 
+
+### Check for node_modules updates
+
+```bash
+
+$ sudo npm install -g npm-check
+
+$ cd /path/to/this-project
+
+$ npm-check
+
+
+```
+
 ## Folder structure
 | Folder / File Path                | Description                          |
 | -----------------------------     | :------------------------------------|
@@ -63,6 +77,7 @@ $ nw
 * Angular sample app using best practices
 * Test build and pack gulp tasks
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
+* Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Lots of improvements
 
 

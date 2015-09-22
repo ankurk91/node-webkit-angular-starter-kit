@@ -23,7 +23,7 @@
     };
 
     gulp.task('release:cleanTmp', function (cb) {
-        del(paths.tmpDir, {force: true}, cb)
+        del(paths.tmpDir, {force: true}).then(cb(null))
     });
 
     gulp.task('release:osx.64.copyBuild', ['release:cleanTmp'], function () {
