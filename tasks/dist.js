@@ -19,7 +19,7 @@
         htmlreplace = require('gulp-html-replace'),
         minifyHTML = require("gulp-minify-html"),
         minifyCSS = require("gulp-minify-css"),
-        image = require('gulp-image');
+        imagemin = require('gulp-imagemin');
 
 
     // define paths
@@ -141,7 +141,10 @@
 
     gulp.task('dist:images', ['dist:clean'], function () {
         return gulp.src(paths.src.images)
-            .pipe(image())
+            .pipe(imagemin({
+                progressive: true,
+                svgoPlugins: [{removeViewBox: false}]
+            }))
             .pipe(gulp.dest(paths.dist.img))
             .on('error', gutil.log)
     });
