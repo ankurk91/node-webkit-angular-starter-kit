@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "keywords": [
-    "node-webkit"
+    "node-webkit-sample"
   ],
   "repository": {
     "type": "git",
@@ -24,6 +24,10 @@
     "postinstall": "cd ./app  &&  npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nw app/"
+  },
+  "engines": {
+    "node": "0.12.x",
+    "npm": "~2.11.3"
   },
   "author": "ank91",
   "devDependencies": {
