@@ -4,7 +4,7 @@
 ## Target development machine
 * Ubuntu 14.04 x64
 * node 0.12.7
-* npm 2.11.3
+* npm 3.3.3
 * nw.js 0.12.3
 
 

@@ -27,9 +27,13 @@
   },
   "engines": {
     "node": "0.12.x",
-    "npm": "~2.11.3"
+    "npm": "~3.3.3"
   },
   "author": "ank91",
+  "contributors": {
+  },
+  "dependencies": {
+  },
   "devDependencies": {
     "del": "^2.0.2",
     "fs-jetpack": "^0.7.0",
