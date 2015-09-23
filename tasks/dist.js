@@ -19,7 +19,8 @@
         htmlreplace = require('gulp-html-replace'),
         minifyHTML = require("gulp-minify-html"),
         minifyCSS = require("gulp-minify-css"),
-        imagemin = require('gulp-imagemin');
+        imagemin = require('gulp-imagemin'),
+        header = require('gulp-header');
 
 
     // define paths
@@ -65,6 +66,15 @@
         }
     };
 
+    var pkg = require('../package.json');
+    var banner = ['/**',
+        ' * <%= pkg.name %> - <%= pkg.description %>',
+        ' * @version v<%= pkg.version %>',
+        ' * @link <%= pkg.homepage %>',
+        ' * @license <%= pkg.license %>',
+        ' */',
+        ''].join('\n');
+
     gulp.task('bower', function () {
         return bower();
     });
@@ -83,6 +93,7 @@
             .pipe(ngAnnotate())
             .pipe(uglify())
             .pipe(sourcemaps.write('.'))
+            .pipe(header(banner, { pkg : pkg } ))
             .pipe(gulp.dest(paths.dist.js))
             .on('error', gutil.log)
     });

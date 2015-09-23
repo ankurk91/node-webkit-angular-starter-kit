@@ -30,10 +30,8 @@
     "npm": "~3.3.3"
   },
   "author": "ank91",
-  "contributors": {
-  },
-  "dependencies": {
-  },
+  "contributors": {},
+  "dependencies": {},
   "devDependencies": {
     "del": "^2.0.2",
     "fs-jetpack": "^0.7.0",
@@ -41,6 +39,7 @@
     "gulp-bower": "0.0.10",
     "gulp-concat": "^2.5.2",
     "gulp-csslint": "^0.2.0",
+    "gulp-header": "^1.7.1",
     "gulp-html-replace": "^1.4.4",
     "gulp-htmlhint": "^0.3.0",
     "gulp-imagemin": "^2.3.0",
