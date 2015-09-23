@@ -1,9 +1,13 @@
 {
-  "curly": true,
-  "eqeqeq": true,
-  "undef": true,
-  "browser": true,
-  "globals": {
-    "angular": true
-  }
+    "curly": true,
+    "eqeqeq": true,
+    "undef": true,
+    "browser": true,
+    "node": true,
+    "strict": true,
+    "trailing": true,
+    "camelcase": true,
+    "globals": {
+        "angular": true
+    }
 }

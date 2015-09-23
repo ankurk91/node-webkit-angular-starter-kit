@@ -20,7 +20,8 @@
         minifyHTML = require("gulp-minify-html"),
         minifyCSS = require("gulp-minify-css"),
         imagemin = require('gulp-imagemin'),
-        header = require('gulp-header');
+        header = require('gulp-header'),
+        jetpack = require('fs-jetpack');
 
 
     // define paths
@@ -111,8 +112,12 @@
     });
 
     gulp.task('dist:partials', ['dist:clean'], function () {
+
+        var  config = jetpack.read('./.htmlhintrc', 'json');
+        config["doctype-first"] = false;
+
         return gulp.src(paths.src.partials)
-            .pipe(htmlhint({"doctype-first":false}))
+            .pipe(htmlhint(config))
             .pipe(htmlhint.reporter())
             .pipe(minifyHTML({
                 loose: true
@@ -170,7 +175,7 @@
 
     gulp.task('dist:indexFile', ['dist:clean'], function () {
         return gulp.src(paths.src.baseDir + '/index.html')
-            .pipe(htmlhint())
+            .pipe(htmlhint('.htmlhintrc'))
             .pipe(htmlhint.reporter())
             .pipe(htmlreplace({
                 css_vendors: "css/vendors.min.css",
