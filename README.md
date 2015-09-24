@@ -1,5 +1,6 @@
 # [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit
 
+[![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
 
 ## Target development machine
 * Ubuntu 14.04 x64
@@ -33,7 +34,7 @@ $ nw
 ```
 
 
-### Check for node_modules updates
+### Check for node_modules updates or use [versioneye](https://www.versioneye.com/)
 
 ```bash
 

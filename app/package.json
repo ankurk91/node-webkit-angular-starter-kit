@@ -2,6 +2,7 @@
     "main": "index.html",
     "name": "node-webkit-angular-app",
     "version": "0.0.1",
+    "license": "MIT",
     "chromium-args": "--disable-setuid-sandbox",
     "window": {
         "title": "Node Webkit",
