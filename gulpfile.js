@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     del = require('del');
 
 gulp.task('cleanAll', function () {
-    del(['./dist','./tmp','./release','./npm-debug.log'], {force: true}).then(function(paths){
+    del(['./dist','./tmp','./release','./build','./npm-debug.log'], {force: true}).then(function(paths){
         gutil.log('Success :', gutil.colors.green('Cleaning completed.'));
     });
 });

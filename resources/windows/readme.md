@@ -7,6 +7,7 @@ If you are packaging on Linux , you want to install [wine](http://wiki.winehq.or
 
 ## TODO
 * Write more instructions about this process
+* User [winresourcer](https://github.com/felicienfrancois/node-winresourcer) to modify exe property
 
 
 ## Online help

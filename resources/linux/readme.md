@@ -63,6 +63,7 @@ $ sudo dpkg --purge my-application
 
 ## TODO
 * Installing application to /usr/bin
+* Add ```app-name.png``` to ```/usr/share/pixmaps```
 * Add ```copyright``` and ```changelog.Debian``` to installer (/usr/share/doc/my-application)
 * Create rpm package using [fpm](https://github.com/jordansissel/fpm)
 
