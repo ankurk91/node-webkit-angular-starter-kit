@@ -50,7 +50,7 @@
 
         var issFile = jetpack.read('./resources/windows/setup-32.iss');
         issFile = utils.replace(issFile, {
-            appName: manifest.name,
+            appName: manifest.productName,
             appPublisher: manifest.author,
             appVersion: manifest.version,
             appUrl: manifest.homepage,

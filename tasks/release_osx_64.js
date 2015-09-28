@@ -44,7 +44,7 @@
         var plist = jetpack.read('./resources/osx/Info.plist');
 
         plist = utils.replace(plist, {
-            productName: manifest.name,
+            productName: manifest.productName,
             exeName: manifest.name,
             version: manifest.version
         });
@@ -57,7 +57,7 @@
 
         //appdmg.json needs full path
         dmgManifest = utils.replace(dmgManifest, {
-            productName: manifest.name,
+            productName: manifest.productName,
             appPath: paths.buildTargetDir.path(),
             dmgIcon: jetpack.path("./resources/osx/dmg-icon.icns"),
             dmgBackground: jetpack.path("./resources/osx/dmg-background.png")

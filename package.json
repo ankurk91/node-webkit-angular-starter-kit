@@ -1,5 +1,6 @@
 {
   "name": "node-webkit-angular-app",
+  "productName": "Node Webkit Angular App",
   "description": "A sample node-webkit desktop app with angular js",
   "version": "0.0.1",
   "license": "MIT",

@@ -32,7 +32,7 @@ $ nw
 ```
 
 
-### Check for node_modules updates or use [versioneye](https://www.versioneye.com/)
+### Check for node_modules updates 
 
 ```bash
 
