@@ -1,6 +1,4 @@
-# [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit
-
-[![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
+# [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit [![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
 
 ## Target development machine
 * Ubuntu 14.04 x64
@@ -80,7 +78,6 @@ $ npm-check
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Use [gulp-useref](https://github.com/jonkemp/gulp-useref) or [gulp-processhtml](https://www.npmjs.com/package/gulp-processhtml) instead of ```gulp-html-replace```
-* User [gulp-strip-debug](https://github.com/sindresorhus/gulp-strip-debug)
 * Lots of improvements
 
 

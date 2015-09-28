@@ -32,8 +32,6 @@ Our application will be installed in /opt folder. [Why ?](http://www.tldp.org/LD
 
 Make sure all sub directories of 'my-application-installer' have file permission 0755
 
-## Required files
-* DEBIAN/control 
 
 
 ## Command to create debian installer
@@ -62,6 +60,7 @@ $ sudo dpkg --purge my-application
 ```
 
 ## TODO
+
 * Installing application to /usr/bin
 * Add ```app-name.png``` to ```/usr/share/pixmaps```
 * Add ```copyright``` and ```changelog.Debian``` to installer (/usr/share/doc/my-application)

@@ -4,10 +4,11 @@ We will use [Inno setup](http://www.jrsoftware.org/) for creating installer for 
 
 If you are packaging on Linux , you want to install [wine](http://wiki.winehq.org/FrontPage) first.
 
+However it is recommended to build and pack windows installer on same Windows operating system.
 
 ## TODO
 * Write more instructions about this process
-* User [winresourcer](https://github.com/felicienfrancois/node-winresourcer) to modify exe property
+* Use [winresourcer](https://github.com/felicienfrancois/node-winresourcer) to modify exe property
 
 
 ## Online help

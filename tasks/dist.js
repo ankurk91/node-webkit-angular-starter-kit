@@ -21,7 +21,9 @@
         minifyCSS = require("gulp-minify-css"),
         imagemin = require('gulp-imagemin'),
         header = require('gulp-header'),
-        jetpack = require('fs-jetpack');
+        jetpack = require('fs-jetpack'),
+        stripDebug = require('gulp-strip-debug');
+
 
 
     // define paths
@@ -89,6 +91,7 @@
         return gulp.src(paths.src.scripts)
             .pipe(jshint('.jshintrc'))
             .pipe(jshint.reporter(jshintStylish))
+            .pipe(stripDebug())
             .pipe(sourcemaps.init())
             .pipe(concat('app.min.js'))
             .pipe(ngAnnotate())
