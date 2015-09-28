@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <title>Node Webkit App</title>
 
-    <!-- build:css_vendors -->
+    <!-- build:css css/vendors.min.css -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
-    <!-- endbuild -->
+    <!-- /build -->
 
-    <!-- build:css_theme -->
+    <!-- build:css css/theme.min.css -->
     <link rel="stylesheet" href="css/theme.css">
-    <!-- endbuild -->
+    <!-- /build -->
 
-    <!-- build:js_vendors -->
+    <!-- build:js js/vendors.min.js -->
     <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
-    <!-- endbuild -->
+    <!-- /build -->
 
 </head>
 <body ng-controller="AppController as main">
@@ -28,7 +28,7 @@
 
 <div ui-view></div>
 
-<!-- build:js_app -->
+<!-- build:js js/app.min.js -->
 <script type="text/javascript" src="app.module.js"></script>
 <script type="text/javascript" src="app.config.js"></script>
 <script type="text/javascript" src="app-ctrl.js"></script>
@@ -36,6 +36,11 @@
 
 <script type="text/javascript" src="views/home/home-ctrl.js"></script>
 <script type="text/javascript" src="views/about/about-ctrl.js"></script>
-<!-- endbuild -->
+<!-- /build -->
+
+<!-- build:js js/partials.min.js -->
+<!-- compiled partials -->
+<!-- /build -->
+<span></span>
 </body>
 </html>

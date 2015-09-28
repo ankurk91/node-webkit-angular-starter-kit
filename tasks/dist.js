@@ -16,7 +16,7 @@
         jshintStylish = require('jshint-stylish'),
         htmlhint = require("gulp-htmlhint"),
         ngHtml2Js = require('gulp-ng-html2js'),
-        htmlreplace = require('gulp-html-replace'),
+        processhtml = require('gulp-processhtml'),
         minifyHTML = require("gulp-minify-html"),
         minifyCSS = require("gulp-minify-css"),
         imagemin = require('gulp-imagemin'),
@@ -180,15 +180,7 @@
         return gulp.src(paths.src.baseDir + '/index.html')
             .pipe(htmlhint('.htmlhintrc'))
             .pipe(htmlhint.reporter())
-            .pipe(htmlreplace({
-                css_vendors: "css/vendors.min.css",
-                css_theme: "css/theme.min.css",
-                js_vendors: "js/vendors.min.js",
-                js_app: [
-                    "js/app.min.js",
-                    "js/partials.min.js"
-                ]
-            }))
+            .pipe(processhtml())
             .pipe(minifyHTML({
                 loose: true
             }))

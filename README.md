@@ -77,7 +77,6 @@ $ npm-check
 * Test build and pack gulp tasks
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
-* Use [gulp-useref](https://github.com/jonkemp/gulp-useref) or [gulp-processhtml](https://www.npmjs.com/package/gulp-processhtml) instead of ```gulp-html-replace```
 * Lots of improvements
 
 

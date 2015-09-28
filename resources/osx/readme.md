@@ -5,6 +5,7 @@
 *  ```appdmg``` runs only on Mac OS
 
 ## TODO
+* Write folder structure for preparing the installer
 * Create an installer and test it on Mac
 * Automatic codesign
 
