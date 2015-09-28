@@ -14,12 +14,11 @@ gulp.task('cleanAll', function () {
 require('./tasks/dist.js');
 require('./tasks/build.js');
 
-if (utils.os === 'linux') {
+if (utils.os() === 'linux') {
     require('./tasks/release_linux_64.js');
-} else if (utils.os === 'windows') {
+} else if (utils.os() === 'windows') {
     require('./tasks/release_windows_32.js');
-} else if (utils.os === 'osx') {
+} else if (utils.os() === 'osx') {
     require('./tasks/release_osx_64.js');
-
 }
 

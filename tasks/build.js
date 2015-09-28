@@ -14,7 +14,7 @@
         buildType: 'default', // versioned
         version: '0.12.3', //nw.js version number, using stable
         files: ['./dist/**/*'],
-        winIco: (utils.os === 'windows') ? 'resources/windows/app-icon.ico' : null,
+        winIco: (utils.os() === 'windows') ? 'resources/windows/app-icon.ico' : null,
         macZip: false,
         buildDir: './build',
         cacheDir: './cache'
