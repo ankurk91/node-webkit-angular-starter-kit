@@ -53,17 +53,17 @@
         },
         vendors: {
             scripts: [
-                "./bower_components/angular/angular.js",
-                "./bower_components/angular-ui-router/release/angular-ui-router.js",
-                "./bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
-                "./bower_components/underscore/underscore.js"
+                "./app/bower_components/angular/angular.js",
+                "./app/bower_components/angular-ui-router/release/angular-ui-router.js",
+                "./app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+                "./app/bower_components/underscore/underscore.js"
             ],
             styles: [
-                "./bower_components/bootstrap/dist/css/bootstrap.css",
-                "./bower_components/font-awesome/css/font-awesome.css"
+                "./app/bower_components/bootstrap/dist/css/bootstrap.css",
+                "./app/bower_components/font-awesome/css/font-awesome.css"
             ],
             fonts: [
-                "./bower_components/font-awesome/fonts/*.*"
+                "./app/bower_components/font-awesome/fonts/*.*"
             ]
 
         }

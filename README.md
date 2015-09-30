@@ -51,7 +51,7 @@ $ npm-check
 | app/                              | Contains js,css,html for your app, this is where your write your angular code                        |
 | app/node_modules/                 | Stores node packages to be packed with app                      |
 | app/package.json               | JSON file required to run nw.js apps , defines dependencies only , no devDependencies should be defined here                        |
-| bower_components/              | Stores your front end dependencies (vendors)                           |
+| app/bower_components/              | Stores your front end dependencies (vendors)                           |
 | cache/                         | Used by nw-builder for caching nw sdk for different platforms                            |
 | dist/                          | Stores minified version of js,css,html. Ready to pack, to be used by nw-builder , created by gulp task                            |
 | node_modules/                  | Stores node package for development (devDependencies) only                             |

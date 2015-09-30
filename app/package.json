@@ -1,5 +1,5 @@
 {
-  "main": "index.html",
+  "main": "app://node-webkit-angular-app/index.html",
   "name": "node-webkit-angular-app",
   "version": "0.0.1",
   "license": "MIT",
@@ -44,10 +44,16 @@
   },
   "packages": {
     "mac": {
+      "url" : ""
     },
     "win": {
+      "url" : ""
     },
     "linux32": {
+      "url" : ""
+    },
+    "linux64": {
+      "url" : ""
     }
   }
 }
