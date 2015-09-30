@@ -62,6 +62,25 @@ $ npm-check
 | package.json                   | Defined devDependencies only, application version , npm scripts etc.                            |
 | version.sh                     | Use this shell script to update app version number to different .json files                             |   
 
+### ./package.json changes
+
+| Property                | Description                          |
+| -----------------------------     | :------------------------------------|
+| productName                       | Used by gulp task, this can have spaces, capital letters, separate from ```name``` property                        |
+| optionalDependencies              | We kept ```appdmg``` here , because it runs only on Mac OS , so npm will not produce error installing it |
+| version                           | We use this version number in gulp tasks, should be same as in ```app/package.json```|
+
+
+### ./app/package.json changes
+
+| Property                | Description                          |
+| -----------------------------     | :------------------------------------|
+| version                           | Should be same as in ```./package.json``` |
+| platformOverrides                 | Used by nw-builder to override any property while building |
+| packages                          | Used by node-webkit-updater to check for updates |
+| chromium-args                     | Any command line parameters you want to pass to nw.js|
+
+
 
 ### Packages
 * nw.js, Angular JS, Gulp, Bower, nw-Builder
@@ -77,6 +96,7 @@ $ npm-check
 * Test build and pack gulp tasks
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
+* Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * Lots of improvements
 
 
