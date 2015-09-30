@@ -96,8 +96,8 @@
             .pipe(concat('app.min.js'))
             .pipe(ngAnnotate())
             .pipe(uglify())
-            .pipe(sourcemaps.write('.'))
             .pipe(header(banner, { pkg : pkg } ))
+            .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(paths.dist.js))
             .on('error', gutil.log)
     });
