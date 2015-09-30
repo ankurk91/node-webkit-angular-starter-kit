@@ -1,5 +1,6 @@
 # https://github.com/github/gitignore
 # https://www.gitignore.io/
+# http://git-scm.com/docs/gitignore
 
 # phpstorm, webstorm
 .idea
@@ -12,6 +13,7 @@ npm-debug.log
 # OS generated files
 .DS_Store
 Thumbs.db
+*~
 
 # nw builder
 /build/
