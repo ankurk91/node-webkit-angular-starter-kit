@@ -42,6 +42,7 @@
   },
   "dependencies": {
   },
+  "manifestUrl": "https://raw.githubusercontent.com/ank91/node-webkit-angular-starter-kit/master/app/package.json",
   "packages": {
     "mac": {
       "url" : ""

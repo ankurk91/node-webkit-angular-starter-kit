@@ -1,5 +1,7 @@
 # [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit [![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
 
+> This repository tries to cover organizing, building and packaging nw.js desktop apps, not restricted to Angular JS
+
 ## Target development machine
 * Ubuntu 14.04 x64
 * node 0.12.7
@@ -78,12 +80,13 @@ $ npm-check
 | version                           | Should be same as in ```./package.json``` |
 | platformOverrides                 | Used by nw-builder to override any property while building |
 | packages                          | Used by node-webkit-updater to check for updates |
+| manifestUrl                       | URL to your application's ```package.json``` file, it should be public |
 | chromium-args                     | Any command line parameters you want to pass to nw.js|
 
 
 
 ### Packages
-* nw.js, Angular JS, Gulp, Bower, nw-Builder
+* nw.js, nw-Builder, node-webkit-updater, nw-notify, Angular JS, Gulp, Bower,
 * [Angular UI Modules](https://angular-ui.github.io/)
 
 
@@ -97,6 +100,7 @@ $ npm-check
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
+* Integrate [nw-notify](https://github.com/cgrossde/nw-notify)
 * Lots of improvements
 
 
