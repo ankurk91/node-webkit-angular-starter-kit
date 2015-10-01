@@ -85,20 +85,8 @@ $ npm-check
 * [nw-builder](https://github.com/nwjs/nw-builder) 
 * [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * [nw-notify](https://github.com/cgrossde/nw-notify)
+* [Remote Debugging](https://github.com/nwjs/nw.js/wiki/Debugging-with-devtools#remote-debugging)
 
-### [Remote Debugging](https://github.com/nwjs/nw.js/wiki/Debugging-with-devtools#remote-debugging)
-
-```shell
-
-$ cd /path/to/this-project
- 
-$ cd app
-
-$ nw --remote-debugging-port=9999
-
-```
-
-Now open your favourite browser, hit ```http://localhost:9999``` and start debugging.
 
 ### Helper tools' links
 * [Gulp](https://github.com/gulpjs/gulp/)
