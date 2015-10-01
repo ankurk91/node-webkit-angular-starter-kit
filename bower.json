@@ -2,6 +2,8 @@
   "name": "node-webkit-angular-app",
   "description" : "",
   "homepage": "",
+  "author" : "",
+  "keywords" : [],
   "license": "MIT",
   "main" : [],
   "dependencies": {

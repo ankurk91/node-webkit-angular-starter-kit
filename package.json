@@ -25,7 +25,7 @@
   "scripts": {
     "postinstall": "cd ./app  &&  npm install --production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nw app/"
+    "start": "nw ./app/"
   },
   "engines": {
     "node": "0.12.x",

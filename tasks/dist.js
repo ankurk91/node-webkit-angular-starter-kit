@@ -111,6 +111,7 @@
     gulp.task('dist:partials', ['dist:clean'], function () {
 
         var config = jetpack.read('./.htmlhintrc', 'json');
+        //partials files does not have a doctype
         config["doctype-first"] = false;
 
         return gulp.src(paths.src.partials)

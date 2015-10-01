@@ -1,6 +1,8 @@
 (function () {
 
     //only works on OS X because of appdmg
+    //@source https://github.com/LinusU/node-appdmg
+
     'use strict';
 
     var manifest, paths;
@@ -74,17 +76,20 @@
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
         //appdmg needs full path
-        appdmg({
+        var process = appdmg({
             source: paths.buildTargetDir.path('appdmg.json'),
             target: paths.releaseDir.path(dmgName)
-        })
-            .on('error', function (error) {
-                gutil.log('Error :', gutil.colors.red(error));
-            })
-            .on('finish', function () {
-                gutil.log('Success :', gutil.colors.green('DMG is ready -' + dmgName));
-                deferred.resolve();
-            });
+        });
+        process.on('progress', function (step) {
+            gutil.log('AppDMG Progress:', gutil.colors.blue(step.type + ' : ' + step.title));
+        });
+        process.on('error', function (error) {
+            gutil.log('AppDMG Error :', gutil.colors.red(error));
+        });
+        process.on('finish', function () {
+            gutil.log('Success :', gutil.colors.green('DMG is ready -' + dmgName));
+            deferred.resolve();
+        });
 
         return deferred.promise;
     });

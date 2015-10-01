@@ -1,18 +1,17 @@
 (function () {
     'use strict';
 
-    //@https://github.com/nwjs/nw-builder/
 
     //include required plugins
     var gulp = require('gulp'),
         gutil = require('gulp-util'),
         utils = require('./utility'),
-        NwBuilder = require('nw-builder');
+        NwBuilder = require('nw-builder'); //@https://github.com/nwjs/nw-builder/
 
     var nwBuilderOptions = {
         platforms: ['win32', 'win64', 'osx32', 'osx64', 'linux32', 'linux64'],
         buildType: 'default', // versioned
-        version: '0.12.3', //nw.js version number, using stable
+        version: '0.12.3', // nw.js version number, using stable
         files: ['./dist/**/*'],
         winIco: (utils.os() === 'windows') ? 'resources/windows/app-icon.ico' : null,
         macZip: false,
