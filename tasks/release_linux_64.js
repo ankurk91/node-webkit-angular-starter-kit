@@ -70,6 +70,7 @@
         var control = jetpack.read('./resources/linux/DEBIAN/control');
         control = utils.replace(control, {
             name: manifest.name,
+            productName: manifest.productName,
             description: manifest.description,
             version: manifest.version,
             author: manifest.author,

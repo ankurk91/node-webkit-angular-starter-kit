@@ -1,4 +1,4 @@
-Package: {{name}}
+Package: {{productName}}
 Replaces: {{name}}
 Version: {{version}}
 Architecture: {{arch}}
