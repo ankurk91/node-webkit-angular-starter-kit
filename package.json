@@ -23,7 +23,7 @@
     }
   ],
   "scripts": {
-    "postinstall": "cd ./app  &&  npm install",
+    "postinstall": "cd ./app  &&  npm install --production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nw app/"
   },

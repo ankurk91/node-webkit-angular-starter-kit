@@ -19,11 +19,11 @@ $ cd node-webkit-angular-starter-kit
 
 $ sudo npm install -g bower
 
-$ bower install 
+$ bower install
 
 $ sudo npm install -g nw
 
-$ npm install
+$ npm install --dev
 
 $ nw app
 
@@ -48,7 +48,7 @@ $ npm-check
 | -----------------------------     | :------------------------------------|
 | app/                              | Contains js, css, html for your app, this is where your write your angular code                        |
 | app/node_modules/                 | Stores node packages to be packed with app, should not contain any devDependency                      |
-| [app/package.json](app/package.json)               | JSON file required to run nw.js apps , defines dependencies only , no devDependencies should be defined here                        |
+| [app/package.json](app/package.json)   | JSON file required to run nw.js apps , defines dependencies only , no devDependencies should be defined here                        |
 | app/bower_components/              | Stores your front end dependencies (vendors)                           |
 | cache/                         | Used by nw-builder for caching nw sdk for different platforms, ignored by git                            |
 | dist/                          | Stores minified version of js,css,html. Ready to pack, to be used by nw-builder , created by gulp task , ignored by git                           |
@@ -57,8 +57,8 @@ $ npm-check
 | resources/                     | Stores installer related files to be used by nw-builder                             |
 | tasks/                         | Gulp tasks breakdown                         |   
 | tmp/                           | Used by nw-builder during packaging, ignored by git                          |
-| [package.json](package.json)                   | Defined devDependencies only, application version , npm scripts etc.                            |
-| [version.sh](version.sh)                     | Use this shell script to update app version number to different .json files                             |   
+| [package.json](package.json)              | Defined devDependencies only, application version , npm scripts etc.                            |
+| [version.sh](version.sh)                  | Use this shell script to update app version number to different .json files                             |   
 
 ### ./package.json changes
 
@@ -77,7 +77,7 @@ $ npm-check
 | platformOverrides                 | Used by nw-builder to override any ```./package.json``` property while building |
 | packages                          | Used by node-webkit-updater to check for updates |
 | manifestUrl                       | Used by  node-webkit-updater, URL to your application's ```package.json``` file, it should be public |
-| chromium-args                     | Any chromium command line [parameters](https://github.com/nwjs/nw.js/wiki/manifest-format#chromium-args) you want to pass to nw.js|
+| chromium-args                     | Chromium command line [parameters](https://github.com/nwjs/nw.js/wiki/manifest-format#chromium-args) you want to pass to nw.js|
 
 
 

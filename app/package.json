@@ -3,7 +3,7 @@
   "name": "node-webkit-angular-app",
   "version": "0.0.1",
   "license": "MIT",
-  "chromium-args": "--disable-setuid-sandbox",
+  "chromium-args": "--disable-setuid-sandbox --disable-accelerated-video --disable-audio --disable-3d-apis --ignore-gpu-blacklist --disable-plugins --disable-plugins-discovery",
   "window": {
     "title": "Node Webkit",
     "icon": "img/icon.png",
