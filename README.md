@@ -85,14 +85,26 @@ $ npm-check
 
 
 
-### Packages
-* nw.js, nw-Builder, node-webkit-updater, nw-notify, Angular JS, Gulp, Bower,
-* [Angular UI Modules](https://angular-ui.github.io/)
+### Node Webkit related link
+* [nw.js](https://github.com/nwjs/nw.js)
+* [nw-builder](https://github.com/nwjs/nw-builder) 
+* [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
+* [nw-notify](https://github.com/cgrossde/nw-notify)
 
 
-### Notes for Angular JS devs
-* Use [ng-strict-di](https://docs.angularjs.org/api/ng/directive/ngApp)
+### Helper tools' links
+* [Gulp](https://github.com/gulpjs/gulp/)
+* [Bower](http://bower.io)
+* [JSHint](https://github.com/jshint/jshint)
+* [CSSLint](https://github.com/CSSLint/csslint)
+* [HTMLLint](https://github.com/htmllint/htmllint)
+
+
+### Links for Angular JS devs
 * [Angular style guide](https://github.com/johnpapa/angular-styleguide)
+* [Angular UI Modules](https://angular-ui.github.io/)
+* [ng-annotate](https://github.com/Kagami/gulp-ng-annotate)
+
 
 ### TODO
 * Angular sample app using best practices
@@ -104,4 +116,7 @@ $ npm-check
 * Lots of improvements
 
 
-***For personal use only***
+License
+-------
+
+The MIT License (MIT)

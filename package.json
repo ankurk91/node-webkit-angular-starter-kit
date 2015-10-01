@@ -5,7 +5,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "keywords": [
-    "node-webkit-sample"
+    "nw.js",
+    "node-webkit-starter-kit"
   ],
   "repository": {
     "type": "git",
@@ -37,7 +38,6 @@
     "del": "^2.0.2",
     "fs-jetpack": "^0.7.0",
     "gulp": "~3.9.0",
-    "gulp-bower": "0.0.10",
     "gulp-concat": "^2.5.2",
     "gulp-csslint": "^0.2.0",
     "gulp-header": "^1.7.1",

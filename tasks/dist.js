@@ -6,7 +6,6 @@
     var gulp = require('gulp'),
         del = require('del'),
         gutil = require("gulp-util"),
-        bower = require('gulp-bower'),
         concat = require("gulp-concat"),
         ngAnnotate = require('gulp-ng-annotate'),
         sourcemaps = require('gulp-sourcemaps'),
@@ -23,7 +22,6 @@
         header = require('gulp-header'),
         jetpack = require('fs-jetpack'),
         stripDebug = require('gulp-strip-debug');
-
 
 
     // define paths
@@ -78,10 +76,6 @@
         ' */',
         ''].join('\n');
 
-    gulp.task('bower', function () {
-        return bower();
-    });
-
     gulp.task('dist:clean', function (cb) {
         del(paths.dist.baseDir, {force: true}).then(cb(null))
     });
@@ -96,14 +90,14 @@
             .pipe(concat('app.min.js'))
             .pipe(ngAnnotate())
             .pipe(uglify())
-            .pipe(header(banner, { pkg : pkg } ))
+            .pipe(header(banner, {pkg: pkg}))
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(paths.dist.js))
             .on('error', gutil.log)
     });
 
 
-    gulp.task('dist:scripts.vendors', ['dist:clean', 'bower'], function () {
+    gulp.task('dist:scripts.vendors', ['dist:clean'], function () {
         var stream = gulp.src(paths.vendors.scripts)
             .pipe(sourcemaps.init())
             .pipe(concat('vendors.min.js'))
@@ -116,7 +110,7 @@
 
     gulp.task('dist:partials', ['dist:clean'], function () {
 
-        var  config = jetpack.read('./.htmlhintrc', 'json');
+        var config = jetpack.read('./.htmlhintrc', 'json');
         config["doctype-first"] = false;
 
         return gulp.src(paths.src.partials)
@@ -147,7 +141,7 @@
     });
 
 
-    gulp.task('dist:styles.vendors', ['dist:clean', 'bower'], function () {
+    gulp.task('dist:styles.vendors', ['dist:clean'], function () {
         var stream = gulp.src(paths.vendors.styles)
             .pipe(concat('vendors.min.css'))
             .pipe(minifyCSS())
@@ -168,7 +162,7 @@
             .on('error', gutil.log)
     });
 
-    gulp.task('dist:fonts', ['dist:clean', 'bower'], function () {
+    gulp.task('dist:fonts', ['dist:clean'], function () {
         var stream = gulp.src(paths.vendors.fonts)
             .pipe(gulp.dest(paths.dist.fonts))
             .on('error', gutil.log);
@@ -196,7 +190,7 @@
     });
 
 
-    gulp.task('dist', ['bower', 'dist:clean', 'dist:additional', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:styles.theme', 'dist:styles.vendors', 'dist:partials', 'dist:images', 'dist:fonts', 'dist:indexFile'], function (cb) {
+    gulp.task('dist', ['dist:clean', 'dist:additional', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:styles.theme', 'dist:styles.vendors', 'dist:partials', 'dist:images', 'dist:fonts', 'dist:indexFile'], function (cb) {
         cb(null)
     });
 
