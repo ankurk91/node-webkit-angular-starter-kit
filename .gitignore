@@ -5,6 +5,11 @@
 # phpstorm, webstorm
 .idea
 
+# sublime and other ide
+.project
+*.sublime-project
+*.sublime-workspace
+
 # logs
 logs/
 *.log

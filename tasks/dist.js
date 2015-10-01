@@ -83,7 +83,7 @@
 
     gulp.task('dist:scripts.app', ['dist:clean'], function () {
         return gulp.src(paths.src.scripts)
-            .pipe(jshint('.jshintrc'))
+            .pipe(jshint('./.jshintrc'))
             .pipe(jshint.reporter(jshintStylish))
             .pipe(stripDebug())
             .pipe(sourcemaps.init())
@@ -132,7 +132,7 @@
 
     gulp.task('dist:styles.theme', ['dist:clean'], function () {
         return gulp.src(paths.src.styles)
-            .pipe(csslint('.csslintrc.json'))
+            .pipe(csslint('./.csslintrc'))
             .pipe(csslint.reporter())
             .pipe(concat('theme.min.css'))
             .pipe(minifyCSS())
@@ -172,7 +172,7 @@
 
     gulp.task('dist:indexFile', ['dist:clean'], function () {
         return gulp.src(paths.src.baseDir + '/index.html')
-            .pipe(htmlhint('.htmlhintrc'))
+            .pipe(htmlhint('./.htmlhintrc'))
             .pipe(htmlhint.reporter())
             .pipe(processhtml())
             .pipe(minifyHTML({
