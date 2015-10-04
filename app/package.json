@@ -18,6 +18,13 @@
     "max_width": 1024,
     "max_height": 768
   },
+  "webkit": {
+    "plugin": false,
+    "java": false,
+    "page-cache": false
+  },
+  "dependencies": {
+  },
   "platformOverrides": {
     "win": {
       "window": {
@@ -34,13 +41,6 @@
         "toolbar": false
       }
     }
-  },
-  "webkit": {
-    "plugin": false,
-    "java": false,
-    "page-cache": false
-  },
-  "dependencies": {
   },
   "manifestUrl": "https://raw.githubusercontent.com/ank91/node-webkit-angular-starter-kit/master/app/package.json",
   "packages": {

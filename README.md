@@ -92,6 +92,7 @@ $ npm-check
 * [Gulp](https://github.com/gulpjs/gulp/)
 * [Bower](http://bower.io)
 * [JSHint](https://github.com/jshint/jshint)
+* [ESLint](https://github.com/eslint/eslint)
 * [CSSLint](https://github.com/CSSLint/csslint)
 * [HTMLLint](https://github.com/htmllint/htmllint)
 
@@ -109,6 +110,7 @@ $ npm-check
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * Integrate [nw-notify](https://github.com/cgrossde/nw-notify)
+* Integrate [ESLint](https://github.com/eslint/eslint)
 * Lots of improvements
 
 
