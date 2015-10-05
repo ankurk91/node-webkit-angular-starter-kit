@@ -110,7 +110,7 @@ $ npm-check
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * Integrate [nw-notify](https://github.com/cgrossde/nw-notify)
-* Integrate [ESLint](https://github.com/eslint/eslint)
+* Integrate [ESLint](http://www.smashingmagazine.com/2015/09/eslint-the-next-generation-javascript-linter/)
 * Lots of improvements
 
 

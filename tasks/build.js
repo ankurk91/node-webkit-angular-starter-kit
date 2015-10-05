@@ -20,7 +20,7 @@
     };
 
 
-    gulp.task('build', function (cb) {
+    gulp.task('build', function () {
 
         var nw = new NwBuilder({
             appName: null,  //auto get from package.json
@@ -45,8 +45,6 @@
         }).catch(function (error) {
             gutil.log('nw-builder :', gutil.colors.red(error));
         });
-
-        cb(null);
 
     });
 

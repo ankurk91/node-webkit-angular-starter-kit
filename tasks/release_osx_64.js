@@ -11,8 +11,8 @@
         del = require('del'),
         utils = require('./utility'),
         gutil = require("gulp-util"),
-        jetpack = require('fs-jetpack'),
-        Q = require('q');
+        jetpack = require('fs-jetpack');
+
 
     //read original package.json
     manifest = jetpack.read('./package.json', 'json');
@@ -50,7 +50,7 @@
             exeName: manifest.name,
             version: manifest.version
         });
-        jetpack.dir(paths.tmpDir).write('Contents/Info.plist', plist);
+        paths.buildTargetDir.write('Contents/Info.plist', plist);
     });
 
     gulp.task('release:osx.64.jsonFile', ['release:cleanTmp'], function () {
@@ -64,34 +64,38 @@
             dmgIcon: jetpack.path("./resources/osx/dmg-icon.icns"),
             dmgBackground: jetpack.path("./resources/osx/dmg-background.png")
         });
-        paths.buildTargetDir.write('appdmg.json', dmgManifest);
+        jetpack.dir(paths.tmpDir).write('appdmg.json', dmgManifest);
     });
 
     gulp.task('release:osx.64.createInstaller', ['release:cleanTmp', 'release:osx.64.jsonFile', 'release:osx.64.plistFile', 'release:osx.64.copyBuild'], function () {
-        var deferred = Q.defer();
+
+        //lets not require it globally
         var appdmg = require('appdmg');
 
         var dmgName = manifest.name + '_' + manifest.version + '.dmg';
 
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
-        //appdmg needs full path
-        var process = appdmg({
-            source: paths.buildTargetDir.path('appdmg.json'),
-            target: paths.releaseDir.path(dmgName)
-        });
-        process.on('progress', function (step) {
-            gutil.log('AppDMG Progress:', gutil.colors.blue(step.type + ' : ' + step.title));
-        });
-        process.on('error', function (error) {
-            gutil.log('AppDMG Error :', gutil.colors.red(error));
-        });
-        process.on('finish', function () {
-            gutil.log('Success :', gutil.colors.green('DMG is ready -' + dmgName));
-            deferred.resolve();
+        return new Promise(function (resolve, reject) {
+            //app-dmg needs full path
+            var process = appdmg({
+                source: jetpack.dir(paths.tmpDir).path('appdmg.json'),
+                target: paths.releaseDir.path(dmgName)
+            });
+            process.on('progress', function (step) {
+                gutil.log('AppDMG Progress:', gutil.colors.blue(step.type + ' : ' + step.title));
+            });
+            process.on('error', function (error) {
+                gutil.log('AppDMG Error :', gutil.colors.red(error));
+                reject(error);
+            });
+            process.on('finish', function () {
+                gutil.log('Success :', gutil.colors.green('DMG is ready -' + dmgName));
+                resolve();
+            });
+
         });
 
-        return deferred.promise;
     });
 
     gulp.task('release:osx64', ['release:cleanTmp', 'release:osx.64.copyBuild', 'release:osx.64.jsonFile', 'release:osx.64.plistFile', 'release:osx.64.icnsFile', 'release:osx.64.createInstaller'], function (cb) {

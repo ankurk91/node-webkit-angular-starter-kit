@@ -1,11 +1,11 @@
 {
   "name": "node-webkit-angular-app",
-  "description" : "",
+  "description": "",
   "homepage": "",
-  "author" : "",
-  "keywords" : [],
+  "author": "",
+  "keywords": [],
   "license": "MIT",
-  "main" : [],
+  "main": [],
   "dependencies": {
     "angular": "1.4.x",
     "angular-bootstrap": "~0.13.4",

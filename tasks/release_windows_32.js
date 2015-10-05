@@ -10,8 +10,7 @@
         gutil = require("gulp-util"),
         utils = require('./utility'),
         jetpack = require('fs-jetpack'),
-        childProcess = require('child_process'),
-        Q = require('q');
+        childProcess = require('child_process');
 
     //read original package.json
     manifest = jetpack.read('./package.json', 'json');
@@ -65,20 +64,35 @@
 
     gulp.task('release:windows.32.createInstaller', ['release:cleanTmp', 'release:windows.32.copyBuild', 'release:windows.32.copyResources', 'release:windows.32.issFile'], function () {
 
-        var deferred = Q.defer();
-
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
-        //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline
-        var process = childProcess.spawn('iscc.exe /Qp ' + jetpack.dir(paths.tmpDir).path('setup-32.iss'));
-        process.stdout.pipe(process.stdout);
-        process.stderr.pipe(process.stderr);
-        process.on('close', function () {
-            gutil.log('Success :', gutil.colors.green('EXE is ready -' + manifest.name + '_' + manifest.version + '.exe'));
-            deferred.resolve();
+        return new Promise(function (resolve, reject) {
+            //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline
+
+            var process = childProcess.spawn('iscc.exe /Qp ' + jetpack.dir(paths.tmpDir).path('setup-32.iss'));
+
+            process.stdout.on('data', function (data) {
+                gutil.log('Process -', data);
+            });
+
+            process.stderr.on('data', function (data) {
+                gutil.log('System error :', gutil.colors.red(data));
+            });
+
+            process.on('error', function (error) {
+                gutil.log('Gulp error :', gutil.colors.red(error));
+                reject(err);
+            });
+
+            process.on('close', function (exitCode) {
+                if (exitCode == 0) {
+                    gutil.log('Success :', gutil.colors.green('Installer created.'));
+                }
+                resolve();
+            });
+
         });
 
-        return deferred.promise;
     });
 
 

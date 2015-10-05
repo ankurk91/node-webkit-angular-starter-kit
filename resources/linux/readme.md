@@ -11,23 +11,25 @@ Lets organize your files and folder first. See the tree below.
 Our application will be installed in /opt folder. [Why ?](http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html)
 
 ```
+
 ├── my-application-installer/
 │   ├── DEBIAN
-│   │   ├── control
+│   │   └── control
 │   ├── usr
 │   │   ├── share
 │   │   │   ├── applications
-│   │   │   │   ├── my-application.desktop
+│   │   │   │   └── my-application.desktop
 │   ├── opt
 │   │   ├── my-application
 │   │   │   ├── locales
-│ │   │   │   ├── en-US.pak
-│ │   │   │   ├── en-GB.pak
+│   │   │   │   ├── en-US.pak
+│   │   │   │   └── en-GB.pak
 │   │   │   ├── icon.png
 │   │   │   ├── icudtl.dat
 │   │   │   ├── my-application
 │   │   │   ├── libffmpegsumo.so
 │   │   │   ├── nw.pak
+
 ```
 
 Make sure all sub directories of 'my-application-installer' have file permission 0755

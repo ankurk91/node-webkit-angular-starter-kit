@@ -11,8 +11,8 @@
         gutil = require("gulp-util"),
         utils = require('./utility'),
         jetpack = require('fs-jetpack'),
-        childProcess = require('child_process'),
-        Q = require('q');
+        childProcess = require('child_process');
+
 
     //read original package.json
     manifest = jetpack.read('./package.json', 'json');
@@ -70,37 +70,44 @@
         var control = jetpack.read('./resources/linux/DEBIAN/control');
         control = utils.replace(control, {
             name: manifest.name,
-            productName: manifest.productName,
             description: manifest.description,
             version: manifest.version,
             author: manifest.author,
             size: appSize,
             homepage: manifest.homepage,
-            arch: 'amd64'
+            arch: 'amd64' //i386
         });
         jetpack.dir(paths.tmpDir).write('DEBIAN/control', control);
     });
 
     gulp.task('release:linux.64.createInstaller', ['release:cleanTmp', 'release:linux.64.copyBuild', 'release:linux.64.additional', 'release:linux.64.desktopFile', 'release:linux.64.controlFile'], function () {
 
-        var deferred = Q.defer();
-
-        var packName = manifest.name + '_' + manifest.version + '_amd64.deb';
-
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
-        childProcess.exec('fakeroot dpkg-deb -Zxz --build ' + jetpack.dir(paths.tmpDir).path() + ' ' + jetpack.dir(paths.releaseDir).path(),
-            function (error, stdout, stderr) {
-                if (error || stderr) {
-                    gutil.log('Gulp error :', gutil.colors.red(error));
-                    gutil.log('System error :', gutil.colors.red(stderr));
-                } else {
-                    gutil.log('Success :', gutil.colors.green('DEB is ready - ' + packName));
-                }
-                deferred.resolve();
+        return new Promise(function (resolve, reject) {
+            var process = childProcess.exec('fakeroot dpkg-deb -Zxz --build ' + jetpack.dir(paths.tmpDir).path() + ' ' + jetpack.dir(paths.releaseDir).path());
+
+            process.stdout.on('data', function (data) {
+                gutil.log('Process -', data);
             });
 
-        return deferred.promise;
+            process.stderr.on('data', function (data) {
+                gutil.log('System error :', gutil.colors.red(data));
+            });
+
+            process.on('error', function (error) {
+                gutil.log('Gulp error :', gutil.colors.red(error));
+                reject(err);
+            });
+
+            process.on('close', function (exitCode) {
+                if (exitCode == 0) {
+                    gutil.log('Success :', gutil.colors.green('Installer created.'));
+                }
+                resolve();
+            });
+        });
+
     });
 
     gulp.task('release:linux64', ['release:cleanTmp', 'release:linux.64.copyBuild', 'release:linux.64.additional', 'release:linux.64.controlFile', 'release:linux.64.desktopFile', 'release:linux.64.createInstaller'], function (cb) {
