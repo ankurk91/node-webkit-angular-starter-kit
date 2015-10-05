@@ -1,6 +1,7 @@
 (function () {
 
     //only works on OS X because of appdmg
+
     //@source https://github.com/LinusU/node-appdmg
 
     'use strict';
@@ -41,7 +42,7 @@
 
         //appdmg.json needs full path
         dmgManifest = utils.replace(dmgManifest, {
-            productName: manifest.productName,
+            productName: manifest.productName || manifest.name,
             appPath: paths.buildTargetDir.path(),
             dmgIcon: jetpack.path("./resources/osx/dmg-icon.icns"),
             dmgBackground: jetpack.path("./resources/osx/dmg-background.png")

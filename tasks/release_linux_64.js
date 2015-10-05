@@ -52,7 +52,7 @@
         var desktop = jetpack.read('./resources/linux/app.desktop');
         desktop = utils.replace(desktop, {
             name: manifest.name,
-            productName: manifest.productName,
+            productName: manifest.productName || manifest.name,
             description: manifest.description,
             version: manifest.version,
             author: manifest.author

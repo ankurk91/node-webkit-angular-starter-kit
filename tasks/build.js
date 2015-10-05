@@ -1,12 +1,13 @@
 (function () {
     'use strict';
 
+    //@https://github.com/nwjs/nw-builder/
 
     //include required plugins
     var gulp = require('gulp'),
         gutil = require('gulp-util'),
         utils = require('./utility'),
-        NwBuilder = require('nw-builder'), //@https://github.com/nwjs/nw-builder/
+        NwBuilder = require('nw-builder'),
         jetpack = require('fs-jetpack');
 
 
@@ -33,8 +34,8 @@
             macCredits: './resources/osx/credits.html',
             macIcns: './resources/osx/app-icon.icns',
             macPlist: {
-                CFBundleDisplayName: manifest.productName,
-                CFBundleName: manifest.productName
+                CFBundleDisplayName: manifest.productName || manifest.name,
+                CFBundleName: manifest.productName || manifest.name
             },
             winIco: nwBuilderOptions.winIco, //wine should be installed on linux/mac systems to use this option
             version: nwBuilderOptions.version,

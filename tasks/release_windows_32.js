@@ -12,8 +12,6 @@
         jetpack = require('fs-jetpack'),
         childProcess = require('child_process');
 
-    //read original package.json
-    manifest = jetpack.read('./package.json', 'json');
 
     paths = {
         releaseDir: '../release/windows/',
@@ -46,10 +44,12 @@
 
 
     gulp.task('release:windows.32.issFile', ['release:cleanTmp'], function () {
+        //read original package.json
+        manifest = jetpack.read('./package.json', 'json');
 
         var issFile = jetpack.read('./resources/windows/setup-32.iss');
         issFile = utils.replace(issFile, {
-            appName: manifest.productName,
+            appName: manifest.productName || manifest.name,
             appPublisher: manifest.author,
             appVersion: manifest.version,
             appUrl: manifest.homepage,
