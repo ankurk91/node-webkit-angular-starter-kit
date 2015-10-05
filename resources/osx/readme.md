@@ -5,21 +5,28 @@
 *  ```appdmg``` runs only on Mac OS
 
 
-## Folder structure
+## Folder structure used by nw-builder
+
+To see all related files and folder, see ```./build/my-application/osx64``` folder
 
 ```
 
-├── my-application-installer/
+├── my-application-installer-tmp/
 │   ├── appdmg.json
 │   ├── my-application.app
 │   │   ├── Contents
+│   │   │   ├── Frameworks
 │   │   │   ├── MacOS
-│   │   │   │  └── my-application
-│   │   │   ├── Info.plist
+│   │   │   │  └── nwjs
 │   │   │   ├── Resources
-│   │   │   │   └── app-icon.icns
+│   │   │   │   ├── app.nw
+│   │   │   │   └── nw.icns
+│   │   │   ├── Info.plist
+│   │   │   ├── PkgInfo
+
 
 ```
+
 
 ## TODO
 * Create an installer and test it on Mac
@@ -30,3 +37,4 @@
 * [node-app-dmg](https://github.com/LinusU/node-appdmg)
 * [Online icns file generator](https://iconverticons.com/online/)
 * [codesign guide](http://blog.erickdransch.com/2012/02/signing-mac-builds/)
+* [Info.plist keys](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html)

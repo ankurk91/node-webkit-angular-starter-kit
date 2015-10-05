@@ -105,7 +105,7 @@ $ npm-check
 
 ### TODO
 * Angular sample app using best practices
-* Test build and pack gulp tasks
+* Test build and pack related gulp tasks
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)

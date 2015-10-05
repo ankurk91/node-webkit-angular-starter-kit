@@ -36,7 +36,7 @@
         src: {
             baseDir: "./app",
             scripts: [
-                "./app/app.module.js",
+                "./app/app.js",
                 "./app/app.config.js",
                 "./app/app-ctrl.js",
                 "./app/views/**/*.js"

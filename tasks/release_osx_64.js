@@ -30,27 +30,9 @@
 
     gulp.task('release:osx.64.copyBuild', ['release:cleanTmp'], function () {
         var stream = gulp.src(paths.buildDir)
-            .pipe(gulp.dest(paths.buildTargetDir.path()))
+            .pipe(gulp.dest(paths.tmpDir))
             .on('error', gutil.log);
         return stream;
-    });
-
-    gulp.task('release:osx.64.icnsFile', ['release:cleanTmp'], function () {
-        var stream = gulp.src('./resources/osx/app-icon.icns')
-            .pipe(gulp.dest(paths.buildTargetDir.path('Contents/Resources/')))
-            .on('error', gutil.log);
-        return stream;
-    });
-
-    gulp.task('release:osx.64.plistFile', ['release:cleanTmp'], function () {
-        var plist = jetpack.read('./resources/osx/Info.plist');
-
-        plist = utils.replace(plist, {
-            productName: manifest.productName,
-            exeName: manifest.name,
-            version: manifest.version
-        });
-        paths.buildTargetDir.write('Contents/Info.plist', plist);
     });
 
     gulp.task('release:osx.64.jsonFile', ['release:cleanTmp'], function () {
@@ -67,7 +49,7 @@
         jetpack.dir(paths.tmpDir).write('appdmg.json', dmgManifest);
     });
 
-    gulp.task('release:osx.64.createInstaller', ['release:cleanTmp', 'release:osx.64.jsonFile', 'release:osx.64.plistFile', 'release:osx.64.copyBuild'], function () {
+    gulp.task('release:osx.64.createInstaller', ['release:cleanTmp', 'release:osx.64.jsonFile', 'release:osx.64.copyBuild'], function () {
 
         //lets not require it globally
         var appdmg = require('appdmg');
@@ -98,7 +80,7 @@
 
     });
 
-    gulp.task('release:osx64', ['release:cleanTmp', 'release:osx.64.copyBuild', 'release:osx.64.jsonFile', 'release:osx.64.plistFile', 'release:osx.64.icnsFile', 'release:osx.64.createInstaller'], function (cb) {
+    gulp.task('release:osx64', ['release:cleanTmp', 'release:osx.64.copyBuild', 'release:osx.64.jsonFile', 'release:osx.64.plistFile',  'release:osx.64.createInstaller'], function (cb) {
         cb(null)
     })
 
