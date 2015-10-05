@@ -57,6 +57,10 @@
 
         var dmgName = manifest.name + '_' + manifest.version + '.dmg';
 
+        gutil.log('Info :', gutil.colors.blue('Deleting dmg if already exists.'));
+        //remove dmg if already exists
+        jetpack.remove(paths.releaseDir.path(dmgName));
+
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
         return new Promise(function (resolve, reject) {

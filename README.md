@@ -1,6 +1,10 @@
-# [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit [![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
+# [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit 
+[![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
+[![GitHub Repo Analytics](https://img.shields.io/badge/Analytics-done-blue.svg)](https://github.com/ank91/node-webkit-angular-starter-kit)
+
 
 > This repository tries to cover organizing, building and packaging nw.js desktop apps, not restricted to Angular JS
+
 
 ## Target development machine
 * Ubuntu 14.04 x64

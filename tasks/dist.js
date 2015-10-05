@@ -163,7 +163,7 @@
             .on('error', gutil.log)
     });
 
-    gulp.task('dist:fonts', ['dist:clean'], function () {
+    gulp.task('dist:copyFonts', ['dist:clean'], function () {
         var stream = gulp.src(paths.vendors.fonts)
             .pipe(gulp.dest(paths.dist.fonts))
             .on('error', gutil.log);
@@ -191,7 +191,7 @@
     });
 
 
-    gulp.task('dist', ['dist:clean', 'dist:additional', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:styles.theme', 'dist:styles.vendors', 'dist:partials', 'dist:images', 'dist:fonts', 'dist:indexFile'], function (cb) {
+    gulp.task('dist', ['dist:clean', 'dist:additional', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:styles.theme', 'dist:styles.vendors', 'dist:partials', 'dist:images', 'dist:copyFonts', 'dist:indexFile'], function (cb) {
         cb(null)
     });
 
