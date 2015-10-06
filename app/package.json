@@ -1,12 +1,12 @@
 {
-  "main": "app://node-webkit-angular-app/index.html",
   "name": "node-webkit-angular-app",
+  "main": "app://node-webkit-angular-app/index.html",
   "version": "0.0.1",
   "license": "MIT",
   "chromium-args": "--disable-setuid-sandbox --disable-accelerated-video --disable-audio --disable-3d-apis --ignore-gpu-blacklist --disable-plugins --disable-plugins-discovery",
   "window": {
     "title": "Node Webkit",
-    "icon": "img/icon.png",
+    "icon": "./img/icon.png",
     "toolbar": true,
     "frame": true,
     "width": 1024,

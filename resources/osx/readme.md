@@ -31,7 +31,7 @@ To see all related files and folder, see ```./build/my-application/osx64``` fold
 ## TODO
 * Create an installer and test it on Mac
 * Automatic [codesign](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/codesign.1.html)
-* Apple Mac Store support procedure
+* Apple Mac Store support [procedure](https://github.com/nwjs/nw.js/wiki/Mac-App-Store-(MAS)-Submission-Guideline)
 
 ## Online help & tools
 * [node-app-dmg](https://github.com/LinusU/node-appdmg)

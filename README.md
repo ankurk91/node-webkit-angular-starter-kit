@@ -9,7 +9,7 @@
 ## Target development machine
 * Ubuntu 14.04 x64
 * node 0.12.7
-* npm 3.3.3
+* npm 3.3.5
 * nw.js 0.12.3
 
 
@@ -41,7 +41,7 @@ $ sudo npm install -g npm-check
 
 $ cd /path/to/this-project
 
-$ npm-check
+$ npm-check -u
 
 
 ```
