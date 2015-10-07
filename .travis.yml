@@ -18,6 +18,8 @@ install:
   - npm install
   # Install bower
   - npm install bower -g
+  # Install gulp
+  - npm install gulp -g
   # Download bower packages
   - bower install
 
@@ -46,4 +48,5 @@ notifications:
 cache:
   directories:
   - node_modules
+  - app/node_modules
   - app/bower_components
