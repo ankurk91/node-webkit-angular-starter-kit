@@ -25,7 +25,8 @@ install:
 
 
 script:
-    - npm gulp
+    - npm run-script gulp-dist
+    - npm run-script gulp-build
 
 after_script:
 #

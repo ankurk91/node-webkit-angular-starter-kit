@@ -25,8 +25,9 @@
   "scripts": {
     "postinstall": "cd ./app  &&  npm install --production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp dist && gulp build",
-    "start": "nw ./app/"
+    "start": "nw ./app/",
+    "gulp-dist": "gulp dist",
+    "gulp-build": "gulp build"
   },
   "engines": {
     "node": "0.12.x",
