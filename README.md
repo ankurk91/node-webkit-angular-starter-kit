@@ -105,6 +105,7 @@ $ npm-check -u
 * [Angular style guide](https://github.com/johnpapa/angular-styleguide)
 * [Angular UI Modules](https://angular-ui.github.io/)
 * [ng-annotate](https://github.com/Kagami/gulp-ng-annotate)
+* [eslint-plugin-angular](https://github.com/Gillespie59/eslint-plugin-angular)
 
 
 ### TODO
@@ -112,7 +113,6 @@ $ npm-check -u
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * Integrate [nw-notify](https://github.com/cgrossde/nw-notify)
-* Integrate [ESLint](http://www.smashingmagazine.com/2015/09/eslint-the-next-generation-javascript-linter/)
 * Gulp task to update version in different json files
 * Lots of improvements
 

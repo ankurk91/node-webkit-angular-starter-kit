@@ -21,7 +21,8 @@
         imagemin = require('gulp-imagemin'),
         header = require('gulp-header'),
         jetpack = require('fs-jetpack'),
-        stripDebug = require('gulp-strip-debug');
+        stripDebug = require('gulp-strip-debug'),
+        eslint = require('gulp-eslint');
 
 
     // define paths
@@ -83,9 +84,11 @@
 
     gulp.task('dist:scripts.app', ['dist:clean'], function () {
         return gulp.src(paths.src.scripts)
+            .pipe(stripDebug())
             .pipe(jshint('./.jshintrc'))
             .pipe(jshint.reporter(jshintStylish))
-            .pipe(stripDebug())
+            .pipe(eslint({configFilePath:'./.eslintrc'}))
+            .pipe(eslint.format('stylish'))
             .pipe(sourcemaps.init())
             .pipe(concat('app.min.js'))
             .pipe(ngAnnotate())

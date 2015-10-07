@@ -3,18 +3,18 @@
 
     angular.module('nwApp').config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise("/error");
+        $urlRouterProvider.otherwise('/error');
 
         $stateProvider
             .state('about', {
-                url: "/about",
-                templateUrl: "views/about/about.html",
+                url: '/about',
+                templateUrl: 'views/about/about.html',
                 controller: 'AboutController'
             });
         $stateProvider
             .state('home', {
-                url: "/home",
-                templateUrl: "views/home/home.html",
+                url: '/home',
+                templateUrl: 'views/home/home.html',
                 controller: 'HomeController'
             });
 

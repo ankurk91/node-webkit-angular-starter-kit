@@ -1,0 +1,35 @@
+{
+    /**
+    * Find more rules here : http://eslint.org/docs/rules/
+    */
+    "rules": {
+        "indent": [
+            1,
+            4
+        ],
+        "quotes": [
+            1,
+            "single"
+        ],
+        "linebreak-style": [
+            2,
+            "unix"
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "camelcase": 2
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "amd": true,
+        "es6": false
+    },
+    "globals": {
+        "angular": true
+    },
+    "plugins": [],
+    "extends": "eslint:recommended"
+}
