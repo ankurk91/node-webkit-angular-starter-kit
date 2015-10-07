@@ -4,6 +4,11 @@
 # We don't want to run linux commands as super user
 sudo: false
 
+# The platforms you wants to test against
+os:
+  - linux
+  #- osx
+
 # Tell Travis CI we are using nodejs
 language: node_js
 
