@@ -23,7 +23,7 @@ install:
 
 
 script:
-    -npm gulp
+    - npm gulp
 
 after_script:
 #
