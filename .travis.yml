@@ -44,7 +44,6 @@ notifications:
 
 
 cache:
-  bundler: true
   directories:
   - node_modules
   - app/bower_components
