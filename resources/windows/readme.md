@@ -1,6 +1,6 @@
 ## Creating installer for Windows
 
-We will use [Inno setup](http://www.jrsoftware.org/) for creating installer for windows
+We are using [Inno setup](http://www.jrsoftware.org/) for creating installer for windows
 
 If you are packaging on Linux , you want to install [wine](http://wiki.winehq.org/FrontPage) first.
 

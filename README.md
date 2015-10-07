@@ -1,6 +1,6 @@
 # [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit 
 [![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
-[![GitHub Repo Analytics](https://img.shields.io/badge/Analytics-done-blue.svg)](https://github.com/ank91/node-webkit-angular-starter-kit)
+
 
 
 > This repository tries to cover organizing, building and packaging nw.js desktop apps, not restricted to Angular JS
@@ -52,7 +52,7 @@ $ npm-check -u
 | app/                              | Contains js, css, html for your app, this is where your write your angular code                        |
 | app/node_modules/                 | Stores node packages to be packed with app, should not contain any devDependency                      |
 | [app/package.json](app/package.json)   | JSON file required to run nw.js apps , defines dependencies only , no devDependencies should be defined here                        |
-| app/bower_components/              | Stores your front end dependencies (vendors)                           |
+| app/bower_components/                  | Stores your front end dependencies (vendors)                           |
 | cache/                         | Used by nw-builder for caching nw sdk for different platforms, ignored by git                            |
 | dist/                          | Stores minified version of js,css,html. Ready to pack, to be used by nw-builder , created by gulp task , ignored by git                           |
 | node_modules/                  | Stores node package for development (devDependencies) only                             |
@@ -84,7 +84,7 @@ $ npm-check -u
 
 
 
-### Node Webkit related link
+### Node Webkit related links
 * [nw.js](https://github.com/nwjs/nw.js)
 * [nw-builder](https://github.com/nwjs/nw-builder) 
 * [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
@@ -108,13 +108,12 @@ $ npm-check -u
 
 
 ### TODO
-* Angular sample app using best practices
-* Test build and pack related gulp tasks
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * Integrate [nw-notify](https://github.com/cgrossde/nw-notify)
 * Integrate [ESLint](http://www.smashingmagazine.com/2015/09/eslint-the-next-generation-javascript-linter/)
+* Gulp task to update version in different json files
 * Lots of improvements
 
 
