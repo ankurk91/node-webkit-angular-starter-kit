@@ -1,0 +1,50 @@
+# Travis CI config file
+# Validate this file here - http://lint.travis-ci.org/
+
+# We don't want to run linux commands as super user
+sudo: false
+
+# Tell Travis CI we are using nodejs
+language: node_js
+
+# Define node js version
+node_js:
+  - 0.12
+
+
+# Install dependency here
+install:
+  # Install node packages
+  - npm install
+  # Install bower
+  - npm install bower -g
+  # Download bower packages
+  - bower install
+
+
+script:
+    -npm gulp
+
+after_script:
+#
+after_success:
+#
+after_failure:
+#
+
+
+# Tell Travis CI to monitor only 'master' branch
+branches:
+  only: master
+
+# Configure email notifications
+notifications:
+     on_success: never
+     on_failure: always
+
+
+cache:
+  bundler: true
+  directories:
+  - node_modules
+  - app/bower_components
