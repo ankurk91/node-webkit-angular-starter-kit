@@ -24,6 +24,7 @@ before_install:
         - source /tmp/.nvm/nvm.sh
         - nvm install $NODE_VERSION
         - nvm use $NODE_VERSION
+        - node --version
     fi
 
 # Install dependency here
