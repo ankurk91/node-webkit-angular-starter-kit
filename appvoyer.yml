@@ -1,0 +1,66 @@
+# Config file for - http://www.appveyor.com/
+# Ref - http://www.appveyor.com/docs/appveyor-yml
+# Validate here - https://ci.appveyor.com/tools/validate-yaml
+
+version: 1.0.{build}-{branch}
+
+# Test against this version of Node.js
+environment:
+  nodejs_version: "0.12"
+
+# Target archs
+platform:
+  - x86
+  #- x64
+
+# set git clone depth
+clone_depth: 10                      # clone entire repository history if not defined
+
+# Install scripts. (runs after repo cloning)
+install:
+    # Get the latest stable version of Node.js or io.js
+    - ps: Install-Product node $env:nodejs_version x86
+    # Install node packages
+    - npm install
+    # Install bower
+    - npm install bower -g
+    # Install gulp
+    - npm install gulp -g
+    # Download bower packages
+    - bower install
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run gulp tasks
+  - npm run-script gulp-dist
+  - npm run-script gulp-build
+
+# cache folder to speed up builds
+cache:
+  - node_modules -> **\package.json  # preserve "node_modules" directory in the root of build folder but will reset it if package.json is modified
+  - app/node_modules -> **\package.json
+  - app/bower_components -> **\bower.json
+  - cache # nw-builder cache
+  - '%APPDATA%\npm-cache'             # npm cache
+
+# notification configs
+notifications:
+  - provider: Email
+    on_build_success: false
+    on_build_failure: true
+    on_build_status_changed: true
+
+
+branches:
+  only:
+    - master
+
+# Do not build on tags (GitHub only)
+skip_tags: true
+
+# Don't actually build.
+# http://www.appveyor.com/docs/how-to/skip-build
+# build: off

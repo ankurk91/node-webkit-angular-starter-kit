@@ -2,7 +2,7 @@
 
 [![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
 [![Build Status](https://travis-ci.org/ank91/node-webkit-angular-starter-kit.svg?branch=master)](https://travis-ci.org/ank91/node-webkit-angular-starter-kit)
-
+[![Build status](https://ci.appveyor.com/api/projects/status/n87gdk3b2g1mj4oa/branch/master?svg=true)](https://ci.appveyor.com/project/ank91/node-webkit-angular-starter-kit/branch/master)
 
 > This repository tries to cover organizing, building and packaging nw.js desktop apps, not restricted to Angular JS
 

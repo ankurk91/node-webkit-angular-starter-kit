@@ -82,7 +82,7 @@
                 reject(error);
             });
             process.on('finish', function () {
-                gutil.log('Success :', gutil.colors.green('DMG is ready -' + dmgName));
+                gutil.log('Success :', gutil.colors.green('DMG is ready - ' + dmgName));
                 resolve();
             });
 
