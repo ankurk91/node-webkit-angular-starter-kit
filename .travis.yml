@@ -7,7 +7,7 @@ sudo: false
 # The platforms you wants to test against
 os:
   - linux
-  #- osx
+  - osx
 
 # Tell Travis CI we are using nodejs
 language: node_js
@@ -32,6 +32,7 @@ install:
 script:
     - npm run-script gulp-dist
     - npm run-script gulp-build
+    - npm run-script gulp-release
 
 after_script:
 #

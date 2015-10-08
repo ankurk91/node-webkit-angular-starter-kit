@@ -27,7 +27,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nw ./app/",
     "gulp-dist": "gulp dist",
-    "gulp-build": "gulp build"
+    "gulp-build": "gulp build",
+    "gulp-release": "gulp release"
   },
   "engines": {
     "node": "0.12.x",
