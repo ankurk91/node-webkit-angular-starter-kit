@@ -27,8 +27,18 @@
 
         //read original package.json
         var manifest = jetpack.read('./package.json', 'json');
+        var currPlatform = utils.platform();
 
-        gutil.log('Build :', gutil.colors.blue('Current OS -'+utils.platform()));
+        gutil.log('Build :', gutil.colors.blue('Detected current platform - ' + currPlatform));
+
+        //exit early if platform not supported
+        if (utils.platform() === false) {
+            gutil.log('Build Error :', gutil.colors.red('Unsupported platform.'));
+            process.exit(1);
+        }
+
+        var platforms = [];
+        platforms.push(currPlatform);
 
         var nw = new NwBuilder({
             appName: null,  //auto get from package.json
@@ -43,7 +53,7 @@
             version: nwBuilderOptions.version,
             files: nwBuilderOptions.files,
             macZip: nwBuilderOptions.macZip,
-            platforms: utils.platform()
+            platforms: platforms
         });
 
         // logging all messages

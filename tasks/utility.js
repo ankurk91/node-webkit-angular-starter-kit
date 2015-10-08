@@ -14,7 +14,7 @@
                 return 'linux';
 
         }
-        return 'unsupported';
+        return false;
     };
 
     module.exports.platform = function () {
@@ -28,7 +28,7 @@
             case 'linux':
                 return process.arch === 'x64' ? 'linux64' : 'linux32';
         }
-        return 'unknown';
+        return false;
     };
 
     module.exports.replace = function (str, patterns) {

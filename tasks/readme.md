@@ -9,7 +9,7 @@ gulp dist
 
 gulp build
 
-gulp release:linux64
+gulp release
 
 ```
 
