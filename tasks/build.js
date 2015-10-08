@@ -28,6 +28,8 @@
         //read original package.json
         var manifest = jetpack.read('./package.json', 'json');
 
+        gutil.log('Build :', gutil.colors.blue('Current OS -'+utils.platform()));
+
         var nw = new NwBuilder({
             appName: null,  //auto get from package.json
             appVersion: null, //auto get from package.json

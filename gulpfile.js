@@ -15,11 +15,31 @@ gulp.task('cleanAll', function () {
 require('./tasks/dist.js');
 require('./tasks/build.js');
 
-if (utils.os() === 'linux') {
-    require('./tasks/release_linux_64.js');
-} else if (utils.os() === 'windows') {
-    require('./tasks/release_windows_32.js');
-} else if (utils.os() === 'osx') {
-    require('./tasks/release_osx_64.js');
-}
+
+//Note: gulp.start will be removed in gulp v4
+gulp.task('release', function () {
+
+    gutil.log('Release :', gutil.colors.blue('Current platform -' + utils.platform()));
+
+    if (utils.platform() === 'linux64') {
+        //supports only Linux 64 bit
+        require('./tasks/release_linux_64.js');
+        return gulp.start('release:linux64');
+
+    } else if (utils.os() === 'windows') {
+        //using 32 bit for both win platforms
+        require('./tasks/release_windows_32.js');
+        return gulp.start('release:windows32');
+
+    } else if (utils.platform() === 'osx64') {
+        //supports only Mac OS 64 bit
+        require('./tasks/release_osx_64.js');
+        return gulp.start('release:osx64');
+
+    } else {
+        gutil.log('Release Error :', gutil.colors.red('Unsupported platform.'));
+        process.exit(1);
+    }
+});
+
 

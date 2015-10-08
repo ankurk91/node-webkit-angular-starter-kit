@@ -2,9 +2,9 @@
 
     'use strict';
 
-    var os = require('os');
 
     module.exports.os = function () {
+        var os = require('os');
         switch (os.platform()) {
             case 'darwin':
                 return 'osx';
