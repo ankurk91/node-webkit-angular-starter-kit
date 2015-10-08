@@ -26,7 +26,12 @@
     };
 
     gulp.task('release:cleanTmp', function (cb) {
-        del(paths.tmpDir, {force: true}).then(cb(null))
+        del(paths.tmpDir, {force: true}).then(function () {
+                //will create tmp folder again after deleting it
+                jetpack.cwd(paths.tmpDir);
+                cb(null)
+            }
+        )
     });
 
     gulp.task('release:osx.64.copyBuild', ['release:cleanTmp'], function () {
@@ -85,7 +90,7 @@
 
     });
 
-    gulp.task('release:osx64', ['release:cleanTmp', 'release:osx.64.copyBuild', 'release:osx.64.jsonFile',  'release:osx.64.createInstaller'], function (cb) {
+    gulp.task('release:osx64', ['release:cleanTmp', 'release:osx.64.copyBuild', 'release:osx.64.jsonFile', 'release:osx.64.createInstaller'], function (cb) {
         cb(null)
     })
 
