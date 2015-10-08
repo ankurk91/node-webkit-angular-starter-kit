@@ -1,6 +1,15 @@
 # Travis CI config file
 # Validate this file here - http://lint.travis-ci.org/
 
+# define env varialbles
+env:
+  global:
+    - NODE_VERSION: 0.12.7
+
+# git configs
+git:
+  depth: 10
+
 # We don't want to run linux commands as super user
 sudo: false
 
@@ -16,19 +25,19 @@ language: node_js
 node_js:
   - 0.12
 
+
 before_install:
+# nvm is not yet supported on osx, manually install
   - if [ $TRAVIS_OS_NAME == "darwin" ]; then
-        # nvm is not yet supported on osx, manually install
-        - export NODE_VERSION=0.12.7
-        - git clone https://github.com/creationix/nvm.git /tmp/.nvm
-        - source /tmp/.nvm/nvm.sh
-        - nvm install $NODE_VERSION
-        - nvm use $NODE_VERSION
-        - node --version
+      git clone https://github.com/creationix/nvm.git /tmp/.nvm;
+      source /tmp/.nvm/nvm.sh;
+      nvm install $NODE_VERSION;
+      nvm use $NODE_VERSION;
+      node --version;
     fi
 
-# Install dependency here
 
+# Install dependency here
 install:
   # Install node packages
   - npm install
