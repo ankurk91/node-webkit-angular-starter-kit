@@ -17,7 +17,7 @@
         return 'unsupported';
     };
 
-    module.exports.arch = function () {
+    module.exports.platform = function () {
         switch (process.platform) {
             case 'darwin':
                 return process.arch === 'x64' ? 'osx64' : 'osx32';

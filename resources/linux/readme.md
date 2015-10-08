@@ -65,6 +65,7 @@ $ sudo dpkg --purge my-application
 
 * Installing application to /usr/bin
 * Add ```app-name.png``` to ```/usr/share/pixmaps```
+* Add a hi-resolution```app-name.png``` to ```/usr/share/icons/hicolor/512x512/apps/``` folder
 * Add ```copyright``` and ```changelog.Debian``` to installer (/usr/share/doc/my-application)
 * Create rpm package using [fpm](https://github.com/jordansissel/fpm)
 

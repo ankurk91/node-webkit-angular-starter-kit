@@ -41,7 +41,7 @@
             version: nwBuilderOptions.version,
             files: nwBuilderOptions.files,
             macZip: nwBuilderOptions.macZip,
-            platforms: ['linux64']
+            platforms: utils.platform()
         });
 
         // logging all messages
