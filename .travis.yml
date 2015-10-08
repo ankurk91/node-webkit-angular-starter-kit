@@ -19,22 +19,24 @@ os:
   - osx
 
 # Tell Travis CI we are using nodejs
-language: node_js
+# Dont define language we will install node and npm by own
+#language: node_js
 
 # Define node js version
-node_js:
-  - 0.12
+# node_js: 0.12
 
 
 before_install:
 # nvm is not yet supported on osx, manually install
-  - if [ $TRAVIS_OS_NAME == "darwin" ]; then
-      git clone https://github.com/creationix/nvm.git /tmp/.nvm;
-      source /tmp/.nvm/nvm.sh;
-      nvm install $NODE_VERSION;
-      nvm use $NODE_VERSION;
-      node --version;
-    fi
+  - echo "Installing nvm and node js"
+  - rm -rf ~/.nvm
+  - git clone https://github.com/creationix/nvm.git ~/.nvm
+  - source ~/.nvm/nvm.sh
+  - nvm install $NODE_VERSION
+  - nvm use $NODE_VERSION
+  - node --version
+  - npm --version
+
 
 
 # Install dependency here
