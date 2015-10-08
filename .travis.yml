@@ -5,6 +5,7 @@
 env:
   global:
     - NODE_VERSION: 0.12.7
+    - NPM_VERSION: 3.3.6
 
 # git configs
 git:
@@ -20,20 +21,22 @@ os:
 
 # Tell Travis CI we are using nodejs
 # Dont define language we will install node and npm by own
-#language: node_js
+# language: node_js
 
 # Define node js version
+# Dont define node version we will install node and npm by own
 # node_js: 0.12
 
 
 before_install:
-# nvm is not yet supported on osx, manually install
+# nvm is not yet supported on osx, will manually install
   - echo "Installing nvm and node js"
   - rm -rf ~/.nvm
   - git clone https://github.com/creationix/nvm.git ~/.nvm
   - source ~/.nvm/nvm.sh
   - nvm install $NODE_VERSION
   - nvm use $NODE_VERSION
+  - npm install npm@$NPM_VERSION -g
   - node --version
   - npm --version
 
@@ -50,7 +53,7 @@ install:
   # Download bower packages
   - bower install
 
-
+# We can combine them to one but
 script:
     - npm run-script gulp-dist
     - npm run-script gulp-build
@@ -74,6 +77,7 @@ notifications:
      on_failure: always
 
 
+# You can delete cache using travis-ci web interface
 cache:
   directories:
   - cache

@@ -19,7 +19,7 @@ require('./tasks/build.js');
 //Note: gulp.start will be removed in gulp v4
 gulp.task('release', function () {
 
-    gutil.log('Release :', gutil.colors.blue('Detected Current platform -' + utils.platform()));
+    gutil.log('Release :', gutil.colors.blue('Detected Current platform as - ' + utils.platform()));
 
     if (utils.platform() === 'linux64') {
         //supports only Linux 64 bit

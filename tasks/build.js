@@ -29,7 +29,7 @@
         var manifest = jetpack.read('./package.json', 'json');
         var currPlatform = utils.platform();
 
-        gutil.log('Build :', gutil.colors.blue('Detected current platform - ' + currPlatform));
+        gutil.log('Build :', gutil.colors.blue('Detected current platform as - ' + currPlatform));
 
         //exit early if platform not supported
         if (utils.platform() === false) {
