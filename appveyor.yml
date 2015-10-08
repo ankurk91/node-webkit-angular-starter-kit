@@ -34,6 +34,8 @@ test_script:
   # Output useful info for debugging.
   - node --version
   - npm --version
+  - echo %CD%
+  - cmd: dir
   # run gulp tasks
   - npm run-script gulp-dist
   - npm run-script gulp-build
@@ -62,5 +64,4 @@ branches:
 skip_tags: true
 
 # Don't actually build.
-# http://www.appveyor.com/docs/how-to/skip-build
-# build: off
+build: off
