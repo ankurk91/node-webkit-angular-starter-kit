@@ -12,6 +12,8 @@
         jetpack = require('fs-jetpack'),
         childProcess = require('child_process');
 
+    //read original package.json
+    manifest = jetpack.read('./package.json', 'json');
 
     paths = {
         releaseDir: '../release/windows/',
@@ -44,8 +46,6 @@
 
 
     gulp.task('release:windows.32.issFile', ['release:cleanTmp'], function () {
-        //read original package.json
-        manifest = jetpack.read('./package.json', 'json');
 
         var issFile = jetpack.read('./resources/windows/setup-32.iss');
         issFile = utils.replace(issFile, {
@@ -66,10 +66,12 @@
 
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
+        var isscPath = jetpack.dir('C:\\Program Files (x86)\\Inno Setup 5').path('ISCC.exe');
+
         return new Promise(function (resolve, reject) {
             //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline
 
-            var process = childProcess.spawn('iscc.exe /Qp ' + jetpack.dir(paths.tmpDir).path('setup-32.iss'));
+            var process = childProcess.spawn(isscPath+' /Qp ' + jetpack.dir(paths.tmpDir).path('setup-32.iss'));
 
             process.stdout.on('data', function (data) {
                 gutil.log('Process -', data);

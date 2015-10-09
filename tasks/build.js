@@ -57,6 +57,8 @@
             process.exit(1);
         }
 
+        gutil.log('Build Info:', gutil.colors.blue('Building for platform - ' + platforms[0]));
+
         var nw = new NwBuilder({
             appName: null,  //auto get from package.json
             appVersion: null, //auto get from package.json
