@@ -23,6 +23,10 @@ install:
     - npm install gulp -g
     # Download bower packages
     - bower install
+    # download inno setup installer , http://www.appveyor.com/docs/how-to/download-file
+    - ps: Start-FileDownload "http://www.jrsoftware.org/download.php/is.exe" -FileName innosetup.exe
+    # install inno setup
+    - ps: innosetup.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /LOG="c\install.log" /NOCANCEL
 
 # Post-install test scripts.
 test_script:
@@ -34,14 +38,15 @@ test_script:
   # run gulp tasks
   - npm run-script gulp-dist
   - npm run-script gulp-build
+  - npm run-script gulp-release
 
 # Cache folder to speed up builds
 cache:
-  - node_modules -> **\package.json  # preserve "node_modules" directory in the root of build folder but will reset it if package.json is modified
+  - node_modules -> **\package.json # preserve "node_modules" directory in the root of build folder but will reset it if package.json is modified
   - app/node_modules -> **\package.json
   - app/bower_components -> **\bower.json
-  - cache # nw-builder cache
-  - '%APPDATA%\npm-cache'             # npm cache
+  - cache   # nw-builder cache
+  - '%APPDATA%\npm-cache'   # npm cache
 
 # which git branch to watch
 branches:
