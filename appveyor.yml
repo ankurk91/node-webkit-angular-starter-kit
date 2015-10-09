@@ -24,9 +24,10 @@ install:
     # Download bower packages
     - bower install
     # download inno setup installer , http://www.appveyor.com/docs/how-to/download-file
-    - ps: Invoke-WebRequest "http://www.jrsoftware.org/download.php/is.exe" -OutFile c:\innosetup.exe
+    - ps: Start-FileDownload "http://www.jrsoftware.org/download.php/is.exe"
+    - cmd: dir
     # install inno setup
-    - cmd: c:\innosetup.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /LOG="c\install.log" /NOCANCEL
+    - cmd: is.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /LOG="c\install.log" /NOCANCEL
 
 # Post-install test scripts.
 test_script:
