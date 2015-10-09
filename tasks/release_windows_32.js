@@ -71,7 +71,7 @@
         return new Promise(function (resolve, reject) {
             //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline
 
-            var process = childProcess.spawn(isscPath+' /Qp ' + jetpack.dir(paths.tmpDir).path('setup-32.iss'));
+            var process = childProcess.spawn('"'+isscPath+'" /Qp ' + jetpack.dir(paths.tmpDir).path('setup-32.iss'));
 
             process.stdout.on('data', function (data) {
                 gutil.log('Process -', data);
@@ -83,7 +83,7 @@
 
             process.on('error', function (error) {
                 gutil.log('Gulp error :', gutil.colors.red(error));
-                reject(err);
+                reject(error);
             });
 
             process.on('close', function (exitCode) {
