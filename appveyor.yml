@@ -43,6 +43,7 @@ cache:
   - cache # nw-builder cache
   - '%APPDATA%\npm-cache'             # npm cache
 
+# which git branch to watch
 branches:
   only:
     - master

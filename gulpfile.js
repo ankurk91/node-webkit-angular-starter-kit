@@ -37,7 +37,7 @@ gulp.task('release', function () {
         return gulp.start('release:osx64');
 
     } else {
-        gutil.log('Release Error :', gutil.colors.red('Unsupported platform.'));
+        gutil.log('Release Error :', gutil.colors.red('Unsupported platform. Exit now'));
         process.exit(1);
     }
 });

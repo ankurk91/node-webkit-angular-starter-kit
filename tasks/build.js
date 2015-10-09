@@ -23,22 +23,38 @@
     };
 
 
+    function isPlatformSupported() {
+        var platforms = [];
+
+        if (utils.os() === 'windows') {
+            //build for 32 bit even if current os is win64
+            return platforms.push['win32']
+        }
+        if (utils.platform() === 'osx64') {
+            //only built for 64 bit if current os is osx64
+            return platforms.push['osx64']
+        }
+        if (utils.platform() === 'linux64') {
+            //only built for 64 bit if current os is osx64
+            return platforms.push['linux64']
+        }
+
+        return false;
+    }
+
     gulp.task('build', function () {
 
         //read original package.json
         var manifest = jetpack.read('./package.json', 'json');
-        var currPlatform = utils.platform();
+        var isPlatformSupported = isPlatformSupported();
 
-        gutil.log('Build :', gutil.colors.blue('Detected current platform as - ' + currPlatform));
+        gutil.log('Build :', gutil.colors.blue('Detected current platform as - ' + utils.platform()));
 
         //exit early if platform not supported
-        if (utils.platform() === false) {
-            gutil.log('Build Error :', gutil.colors.red('Unsupported platform.'));
+        if (isPlatformSupported === false) {
+            gutil.log('Build Error :', gutil.colors.red('Unsupported platform. Exit now.'));
             process.exit(1);
         }
-
-        var platforms = [];
-        platforms.push(currPlatform);
 
         var nw = new NwBuilder({
             appName: null,  //auto get from package.json
@@ -53,19 +69,19 @@
             version: nwBuilderOptions.version,
             files: nwBuilderOptions.files,
             macZip: nwBuilderOptions.macZip,
-            platforms: platforms
+            platforms: isPlatformSupported
         });
 
         // logging all messages
         nw.on('log', function (msg) {
-            gutil.log('nw-builder :', msg);
+            gutil.log('nw-builder Log:', msg);
         });
 
         // log success and fail events
         nw.build().then(function () {
-            gutil.log('nw-builder :', gutil.colors.green('Build done !'));
+            gutil.log('nw-builder Success:', gutil.colors.green('Build done !'));
         }).catch(function (error) {
-            gutil.log('nw-builder :', gutil.colors.red(error));
+            gutil.log('nw-builder Error :', gutil.colors.red(error));
         });
 
     });
