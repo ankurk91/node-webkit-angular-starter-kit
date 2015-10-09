@@ -27,7 +27,7 @@ install:
     - ps: Start-FileDownload "http://www.jrsoftware.org/download.php/is.exe"
     - cmd: dir
     # install inno setup
-    - cmd: is.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /LOG="c\install.log" /NOCANCEL
+    - cmd: is.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOCANCEL
 
 # Post-install test scripts.
 test_script:
