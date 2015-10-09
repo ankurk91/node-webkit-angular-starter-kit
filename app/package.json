@@ -3,6 +3,11 @@
   "main": "app://node-webkit-angular-app/index.html",
   "version": "0.0.1",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ank91/node-webkit-angular-starter-kit.git"
+  },
+  "description": "A sample node-webkit desktop app with angular js",
   "chromium-args": "--disable-setuid-sandbox --disable-accelerated-video --disable-audio --disable-3d-apis --ignore-gpu-blacklist --disable-plugins --disable-plugins-discovery",
   "window": {
     "title": "Node Webkit",

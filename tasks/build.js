@@ -23,35 +23,36 @@
     };
 
 
-    function isPlatformSupported() {
+    var isPlatformSupported = function () {
         var platforms = [];
 
         if (utils.os() === 'windows') {
             //build for 32 bit even if current os is win64
-            return platforms.push['win32']
+            platforms.push('win32');
         }
-        if (utils.platform() === 'osx64') {
+        else if (utils.platform() === 'osx64') {
             //only built for 64 bit if current os is osx64
-            return platforms.push['osx64']
+            platforms.push('osx64');
         }
-        if (utils.platform() === 'linux64') {
+        else if (utils.platform() === 'linux64') {
+            console.log('islinux');
             //only built for 64 bit if current os is osx64
-            return platforms.push['linux64']
+            platforms.push('linux64');
         }
 
-        return false;
-    }
+        return platforms;
+    };
 
     gulp.task('build', function () {
 
         //read original package.json
         var manifest = jetpack.read('./package.json', 'json');
-        var isPlatformSupported = isPlatformSupported();
+        var platforms = isPlatformSupported();
 
         gutil.log('Build :', gutil.colors.blue('Detected current platform as - ' + utils.platform()));
 
         //exit early if platform not supported
-        if (isPlatformSupported === false) {
+        if (platforms.length === 0) {
             gutil.log('Build Error :', gutil.colors.red('Unsupported platform. Exit now.'));
             process.exit(1);
         }
@@ -69,7 +70,7 @@
             version: nwBuilderOptions.version,
             files: nwBuilderOptions.files,
             macZip: nwBuilderOptions.macZip,
-            platforms: isPlatformSupported
+            platforms: platforms
         });
 
         // logging all messages
