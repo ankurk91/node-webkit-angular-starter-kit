@@ -68,8 +68,6 @@
 
         var isscPath = jetpack.dir('C:\\Program Files (x86)\\Inno Setup 5').path('ISCC.exe');
 
-        console.log(isscPath);
-
         return new Promise(function (resolve, reject) {
             //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline
 

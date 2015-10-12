@@ -1,4 +1,4 @@
-(function (angular) {
+(function () {
     'use strict';
 
     angular.module('nwApp').config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -22,4 +22,4 @@
     }]).run(['$state', function ($state) {
         $state.go('home');
     }]);
-})(angular);
+})();

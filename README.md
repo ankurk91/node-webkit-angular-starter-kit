@@ -109,6 +109,11 @@ $ npm-check -u
 * [eslint-plugin-angular](https://github.com/Gillespie59/eslint-plugin-angular)
 
 
+### Read more about packaging nw.js app
+* [Packaging for Linux](resources/linux/readme.md)
+* [Packaging for Mac OS](resources/osx/readme.md)
+* [Packaging for Windows](resources/windows/readme.md)
+
 ### TODO
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
