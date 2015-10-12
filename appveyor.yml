@@ -28,8 +28,7 @@ install:
     - cmd: dir
     # install inno setup
     - cmd: is.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOCANCEL
-    - cmd: dir "C:\Program Files"
-    - cmd: dir "C:\Program Files (x86)"
+
 
 # Post-install test scripts.
 test_script:
@@ -41,6 +40,7 @@ test_script:
   # run gulp tasks
   - npm run-script gulp-dist
   - npm run-script gulp-build
+  - cmd: dir tmp
   - npm run-script gulp-release
 
 # Cache folder to speed up builds
