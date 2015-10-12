@@ -28,8 +28,7 @@
     "java": false,
     "page-cache": false
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "platformOverrides": {
     "win": {
       "window": {
@@ -50,16 +49,16 @@
   "manifestUrl": "https://raw.githubusercontent.com/ank91/node-webkit-angular-starter-kit/master/app/package.json",
   "packages": {
     "mac": {
-      "url" : ""
+      "url": ""
     },
     "win": {
-      "url" : ""
+      "url": ""
     },
     "linux32": {
-      "url" : ""
+      "url": ""
     },
     "linux64": {
-      "url" : ""
+      "url": ""
     }
   }
 }

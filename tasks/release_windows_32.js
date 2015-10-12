@@ -66,7 +66,7 @@
 
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
-        var isscPath = jetpack.dir('C:\\Program Files (x86)\\Inno Setup 5').path('ISCC.exe');
+        var isscPath = jetpack.dir('C:\\Program Files\\Inno Setup 5').path('ISCC.exe');
 
         return new Promise(function (resolve, reject) {
             //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline

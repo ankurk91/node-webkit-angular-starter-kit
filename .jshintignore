@@ -1,7 +1,7 @@
 # ignore all from node_modules
 node_modules/
 
-# ignore other fodlers
+# ignore other folders
 dist/
 tmp/
 tasks/

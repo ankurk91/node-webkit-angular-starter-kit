@@ -29,7 +29,7 @@ os:
 
 
 before_install:
-# nvm is not yet supported on osx, will manually install
+# nvm is not yet supported on osx, will manually install for both platforms
   - echo "Installing nvm and node js"
   - rm -rf ~/.nvm
   - git clone https://github.com/creationix/nvm.git ~/.nvm
@@ -42,7 +42,7 @@ before_install:
 
 
 
-# Install dependency here
+# Install any dependency here
 install:
   # Install node packages
   - npm install
