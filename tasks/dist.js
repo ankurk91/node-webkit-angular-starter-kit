@@ -87,7 +87,7 @@
             .pipe(stripDebug())
             .pipe(jshint('./.jshintrc'))
             .pipe(jshint.reporter(jshintStylish))
-            .pipe(eslint({configFilePath:'./.eslintrc'}))
+            .pipe(eslint({configFilePath: './.eslintrc'}))
             .pipe(eslint.format('stylish'))
             .pipe(sourcemaps.init())
             .pipe(concat('app.min.js'))

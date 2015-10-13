@@ -4,7 +4,3 @@ node_modules/
 # ignore other folders
 dist/
 tmp/
-tasks/
-gulpfile.js
-
-

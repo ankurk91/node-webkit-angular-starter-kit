@@ -26,7 +26,7 @@ install:
     # download inno setup installer , http://www.appveyor.com/docs/how-to/download-file
     - ps: Start-FileDownload "http://www.jrsoftware.org/download.php/is.exe"
     - cmd: dir /b
-    # install inno setup
+    # silent install inno setup
     - cmd: is.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOCANCEL
 
 
@@ -41,7 +41,7 @@ test_script:
   - npm run-script gulp-dist
   - npm run-script gulp-build
   - npm run-script gulp-release
-  - cmd: dir /b /s C:\projects\node-webkit-angular-starter-kit
+  - cmd: dir /b C:\projects\node-webkit-angular-starter-kit
 
 
 # Cache folder to speed up builds
@@ -62,3 +62,6 @@ skip_tags: true
 
 # Don't actually build.
 build: off
+
+# Turn off test scripts
+#test: off

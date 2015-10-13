@@ -68,6 +68,7 @@
 
         var programFiles = (utils.platform() === 'win32') ? 'Program Files' : 'Program Files (x86)';
         var isccPath = jetpack.dir('C:\\' + programFiles + '\\Inno Setup 5').path('ISCC.exe');
+
         gutil.log('Using ISCC.exe path: ' + isccPath);
 
         return new Promise(function (resolve, reject) {
