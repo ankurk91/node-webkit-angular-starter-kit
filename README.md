@@ -133,7 +133,7 @@ npm-check -u
 * Lots of improvements
 
 
-####License
+#### License
 -------
 
 MIT [License](LICENSE.txt)
