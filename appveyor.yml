@@ -25,7 +25,7 @@ install:
     - bower install
     # download inno setup installer , http://www.appveyor.com/docs/how-to/download-file
     - ps: Start-FileDownload "http://www.jrsoftware.org/download.php/is.exe"
-    - cmd: dir
+    - cmd: dir /b
     # install inno setup
     - cmd: is.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOCANCEL
 
@@ -36,12 +36,12 @@ test_script:
   - node --version
   - npm --version
   - echo %CD%
-  - cmd: dir
+  - cmd: dir /b
   # run gulp tasks
   - npm run-script gulp-dist
   - npm run-script gulp-build
   - npm run-script gulp-release
-  - cmd: dir C:\projects\node-webkit-angular-starter-kit\tmp
+  - cmd: dir /b /s C:\projects\node-webkit-angular-starter-kit
 
 
 # Cache folder to speed up builds

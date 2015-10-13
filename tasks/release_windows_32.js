@@ -66,9 +66,9 @@
 
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
-        var programFiles = (utils.platform() === 'win32') ? '%PROGRAMFILES%' : '%PROGRAMFILES(X86)%';
-        var isccPath = jetpack.dir(programFiles + '\\Inno Setup 5').path('ISCC.exe');
-        gutil.log('ISCC.exe path: '+isccPath);
+        var programFiles = (utils.platform() === 'win32') ? 'Program Files' : 'Program Files (x86)';
+        var isccPath = jetpack.dir('C:\\' + programFiles + '\\Inno Setup 5').path('ISCC.exe');
+        gutil.log('Using ISCC.exe path: ' + isccPath);
 
         return new Promise(function (resolve, reject) {
             //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline
@@ -99,7 +99,7 @@
 
     });
 
-    gulp.task('release:windows32', ['release:cleanTmp', 'release:windows.32.copyBuild', 'release:windows.32.copyResources', 'release:windows.32.issFile',  'release:windows.32.createInstaller'], function (cb) {
+    gulp.task('release:windows32', ['release:cleanTmp', 'release:windows.32.copyBuild', 'release:windows.32.copyResources', 'release:windows.32.issFile', 'release:windows.32.createInstaller'], function (cb) {
         cb(null)
     })
 
