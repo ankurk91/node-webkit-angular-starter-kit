@@ -24,7 +24,7 @@ os:
 # language: node_js
 
 # Define node js version
-# Dont define node version we will install node and npm by own
+# Don't define node version we will install node and npm by own
 # node_js: 0.12
 
 

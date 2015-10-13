@@ -9,40 +9,50 @@
 
 ## Target development machine
 * Ubuntu 14.04 x64
-* node 0.12.7
-* npm 3.3.5
-* nw.js 0.12.3
+* [node](https://github.com/nodejs/node) 0.12.7
+* [npm](https://github.com/npm/npm) 3.3.6
+* [nw.js](https://github.com/nwjs/nw.js) 0.12.3
+
+
+### Install node-js on Ubuntu via nvm
+* [Detailed Guide](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
 
 
 ### Quick start
 
-```bash
+```shell
 
-$ git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
+# Clone this repo
+git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
 
-$ cd node-webkit-angular-starter-kit
+cd node-webkit-angular-starter-kit
 
-$ sudo npm install -g bower
+# Install bower if not installed
+sudo npm install -g bower
 
-$ bower install
+# Install bower packages
+bower install
 
-$ sudo npm install -g nw
+# Install nw.js package
+sudo npm install -g nw
 
-$ npm install --dev
+# Install node packages
+npm install --dev
 
-$ nw app
+# Start the app
+nw app
 
 ```
 
 ### Check for node_modules updates 
 
-```bash
+```shell
 
-$ sudo npm install -g npm-check
+sudo npm install -g npm-check
 
-$ cd /path/to/this-project
+cd /path/to/this-project
 
-$ npm-check -u
+npm-check -u
 
 
 ```
@@ -66,7 +76,7 @@ $ npm-check -u
 
 ### ./package.json changes
 
-| Property                | Description                          |
+| Property                          | Description                          |
 | -----------------------------     | :------------------------------------|
 | productName                       | Used by gulp task, this can have spaces, capital letters, separate from ```name``` property                        |
 | optionalDependencies              | We kept ```appdmg``` here , because it runs only on Mac OS , so npm will not produce error installing it |
@@ -75,7 +85,7 @@ $ npm-check -u
 
 ### ./app/package.json changes
 
-| Property                | Description                          |
+| Property                          | Description                          |
 | -----------------------------     | :------------------------------------|
 | version                           | Should be same as in ```./package.json``` |
 | platformOverrides                 | Used by nw-builder to override any ```./package.json``` property while building |

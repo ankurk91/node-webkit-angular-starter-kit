@@ -1,8 +1,7 @@
 ## Creating .DMG installer for Mac OS X
 
 
-## Notes
-*  ```appdmg``` runs only on Mac OS
+Using ```appdmg``` which runs only on Mac OS
 
 
 ## Folder structure used by nw-builder
@@ -29,7 +28,7 @@ To see all related files and folder, see ```./build/my-application/osx64``` fold
 
 
 ## TODO
-* Create an installer and test it on Mac
+* Install app via installer on Mac
 * Automatic [codesign](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/codesign.1.html)
 * Apple Mac Store support [procedure](https://github.com/nwjs/nw.js/wiki/Mac-App-Store-(MAS)-Submission-Guideline)
 

@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     'use strict';
     angular
         .module('nwApp', [
@@ -6,4 +6,4 @@
             'ui.bootstrap'
         ]);
 
-})();
+})(angular);
