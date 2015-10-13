@@ -67,8 +67,10 @@
         gutil.log('Info :', gutil.colors.blue('Please wait while creating installer...'));
 
         var isscPath = jetpack.dir('C:\\Program Files (x86)\\Inno Setup 5').path('ISCC.exe');
-
-        return new Promise(function (resolve, reject) {
+        /**
+         * commented for appveyor ci
+         */
+        /*return new Promise(function (resolve, reject) {
             //@source http://www.jrsoftware.org/ishelp/index.php?topic=compilercmdline
 
             var process = childProcess.spawn('"'+isscPath+'" /Qp ' +' "'+ jetpack.dir(paths.tmpDir).path('setup-32.iss')+'"');
@@ -93,7 +95,7 @@
                 resolve();
             });
 
-        });
+        });*/
 
     });
 

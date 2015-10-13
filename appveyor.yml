@@ -40,7 +40,8 @@ test_script:
   # run gulp tasks
   - npm run-script gulp-dist
   - npm run-script gulp-build
-  #- npm run-script gulp-release
+  - npm run-script gulp-release
+  - cmd: C:\projects\node-webkit-angular-starter-kit\tasks\createInstaller.cmd
 
 # Cache folder to speed up builds
 cache:
