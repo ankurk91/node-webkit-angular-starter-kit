@@ -7,14 +7,14 @@
 > This repository tries to cover organizing, building and packaging nw.js desktop apps, not restricted to Angular JS
 
 
-## Target development machine
+### Target development machine
 * Ubuntu 14.04 x64
 * [node](https://github.com/nodejs/node) 0.12.7
 * [npm](https://github.com/npm/npm) 3.3.6
 * [nw.js](https://github.com/nwjs/nw.js) 0.12.3
 
 
-### Install node-js on Ubuntu via nvm
+##### Install node-js on Ubuntu via [nvm](https://github.com/creationix/nvm)
 * [Detailed Guide](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
 
 
@@ -44,7 +44,7 @@ nw app
 
 ```
 
-### Check for node_modules updates 
+#### Check for node_modules updates 
 
 ```shell
 
@@ -57,7 +57,7 @@ npm-check -u
 
 ```
 
-## Folder structure
+### Folder structure
 | Folder / File Path                | Description                          |
 | -----------------------------     | :------------------------------------|
 | app/                              | Contains js, css, html for your app, this is where your write your angular code                        |
@@ -95,7 +95,7 @@ npm-check -u
 
 
 
-### Node Webkit related links
+#### Node Webkit related links
 * [nw.js](https://github.com/nwjs/nw.js)
 * [nw-builder](https://github.com/nwjs/nw-builder) 
 * [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
@@ -103,7 +103,7 @@ npm-check -u
 * [Remote Debugging](https://github.com/nwjs/nw.js/wiki/Debugging-with-devtools#remote-debugging)
 
 
-### Helper tools' links
+#### Helper tools' links
 * [Gulp](https://github.com/gulpjs/gulp/)
 * [Bower](http://bower.io)
 * [JSHint](https://github.com/jshint/jshint)
@@ -112,19 +112,19 @@ npm-check -u
 * [HTMLLint](https://github.com/htmllint/htmllint)
 
 
-### Links for Angular JS devs
+#### Links for Angular JS devs
 * [Angular style guide](https://github.com/johnpapa/angular-styleguide)
 * [Angular UI Modules](https://angular-ui.github.io/)
 * [ng-annotate](https://github.com/Kagami/gulp-ng-annotate)
 * [eslint-plugin-angular](https://github.com/Gillespie59/eslint-plugin-angular)
 
 
-### Read more about packaging nw.js app
+#### Read more about packaging nw.js app
 * [Packaging for Linux](resources/linux/readme.md)
 * [Packaging for Mac OS](resources/osx/readme.md)
 * [Packaging for Windows](resources/windows/readme.md)
 
-### TODO
+#### TODO
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
@@ -133,7 +133,7 @@ npm-check -u
 * Lots of improvements
 
 
-License
+####License
 -------
 
 MIT [License](LICENSE.txt)

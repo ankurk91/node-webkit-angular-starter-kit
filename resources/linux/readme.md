@@ -6,7 +6,7 @@ We wil use ```dpkg-deb``` , an handy tool comes pre-installed on Ubuntu.
 Lets organize your files and folder first. See the tree below.
 
 
-## Folder structure
+### Folder structure
 
 Our application will be installed in /opt folder. [Why ?](http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html)
 
@@ -36,7 +36,7 @@ Make sure all sub directories of 'my-application-installer' have file permission
 
 
 
-## Command to create debian installer
+#### Command to create debian installer
 
 ```bash
 
@@ -45,7 +45,7 @@ fakeroot dpkg-deb -Zxz --build /path/to/my-application-installer /path/to/releas
 
 ```
 
-## Installing the app via command line
+#### Installing the app via command line
 
 ```bash
 
@@ -53,7 +53,7 @@ sudo dpkg --install /path/to/release/my-installer-1.0.0_amd64.deb
 
 ```
 
-## Uninstalling app via command line
+#### Uninstalling app via command line
 
 ```bash
 
@@ -61,7 +61,7 @@ sudo dpkg --purge my-application
 
 ```
 
-## TODO
+#### TODO
 
 * Installing application to /usr/bin
 * Add ```app-name.png``` to ```/usr/share/pixmaps```
@@ -71,7 +71,7 @@ sudo dpkg --purge my-application
 
 
 
-## Online manuals and help
+#### Online manuals and help
 
 * [Creating debian binary packages](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/)
 * [dpkg-deb switches](http://manpages.ubuntu.com/manpages/hardy/man1/dpkg-deb.1.html)
