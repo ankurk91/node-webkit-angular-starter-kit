@@ -27,7 +27,7 @@ git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
 
 cd node-webkit-angular-starter-kit
 
-# Install bower if not installed
+# Install bower if not installed, windows users does not need sudo
 sudo npm install -g bower
 
 # Install bower packages
@@ -72,7 +72,7 @@ npm-check -u
 | tasks/                         | Gulp tasks breakdown                         |   
 | tmp/                           | Used by nw-builder during packaging, ignored by git                          |
 | [package.json](package.json)              | Defined devDependencies only, application version , npm scripts etc.                            |
-| [version.sh](version.sh)                  | Use this shell script to update app version number to different .json files                             |   
+| [version.sh](version.sh)                  | Use this shell script to update app version number to different .json files or you can use ```gulp bump```                             |   
 
 ### ./package.json changes
 
@@ -124,12 +124,12 @@ npm-check -u
 * [Packaging for Mac OS](resources/osx/readme.md)
 * [Packaging for Windows](resources/windows/readme.md)
 
+
 #### TODO
 * Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * Integrate [nw-notify](https://github.com/cgrossde/nw-notify)
-* Gulp task to update version in different json files
 * Lots of improvements
 
 
