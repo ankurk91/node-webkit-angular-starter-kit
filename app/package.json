@@ -8,9 +8,9 @@
     "url": "git://github.com/ank91/node-webkit-angular-starter-kit.git"
   },
   "description": "A sample node-webkit desktop app with angular js",
-  "chromium-args": "--disable-setuid-sandbox --disable-accelerated-video --disable-audio --disable-3d-apis --ignore-gpu-blacklist --disable-plugins --disable-plugins-discovery",
+  "chromium-args": "--ignore-gpu-blacklist --enable-webgl --disable-transparency --disable-device-orientation --disable-accelerated-video --disable-audio --disable-3d-apis --disable-plugins --disable-plugins-discovery --disable-setuid-sandbox",
   "window": {
-    "title": "Node Webkit",
+    "title": "Node Webkit App",
     "icon": "./img/icon.png",
     "toolbar": true,
     "frame": true,
@@ -33,17 +33,20 @@
     "win": {
       "window": {
         "toolbar": false
-      }
+      },
+      "chromium-args": "--ignore-gpu-blacklist --enable-webgl --disable-transparency --disable-device-orientation --disable-accelerated-video --disable-audio --disable-3d-apis --disable-plugins --disable-plugins-discovery --in-process-gpu "
     },
     "osx": {
       "window": {
         "toolbar": false
-      }
+      },
+      "chromium-args": "--ignore-gpu-blacklist --enable-webgl --disable-transparency --disable-device-orientation --disable-accelerated-video --disable-audio --disable-3d-apis --disable-plugins --disable-plugins-discovery"
     },
     "linux": {
       "window": {
         "toolbar": false
-      }
+      },
+      "chromium-args": "--ignore-gpu-blacklist --enable-webgl --disable-transparency --disable-device-orientation --disable-accelerated-video --disable-audio --disable-3d-apis --disable-plugins --disable-plugins-discovery --disable-setuid-sandbox"
     }
   },
   "manifestUrl": "https://raw.githubusercontent.com/ank91/node-webkit-angular-starter-kit/master/app/package.json",
