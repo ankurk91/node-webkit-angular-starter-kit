@@ -28,13 +28,13 @@ git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
 cd node-webkit-angular-starter-kit
 
 # Install bower if not installed, windows users does not need sudo
-sudo npm install -g bower
+sudo npm install -g bower@1.5.3
 
 # Install bower packages
 bower install
 
 # Install nw.js package
-sudo npm install -g nw
+sudo npm install -g nw@0.12.3
 
 # Install node packages
 npm install --dev
