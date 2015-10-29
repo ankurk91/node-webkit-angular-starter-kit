@@ -10,11 +10,12 @@
 ### Target development machine
 * Ubuntu 14.04 x64
 * [node](https://github.com/nodejs/node) 0.12.7
-* [npm](https://github.com/npm/npm) 3.3.6
+* [npm](https://github.com/npm/npm) 3.3.9
 * [nw.js](https://github.com/nwjs/nw.js) 0.12.3
 
 
 ##### Install node-js on Ubuntu via [nvm](https://github.com/creationix/nvm)
+* [Quick Guide](https://gist.github.com/ank91/8f107ef490f40f74a1cf)
 * [Detailed Guide](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
 
 
@@ -39,7 +40,7 @@ sudo npm install -g nw@0.12.3
 # Install node packages
 npm install --dev
 
-# Start the app
+# Start the app from source
 nw app
 
 ```
@@ -48,10 +49,13 @@ nw app
 
 ```shell
 
+# Install npm-check package globaly
 sudo npm install -g npm-check
 
+# Browser to this project
 cd /path/to/this-project
 
+# Check for updates - interactive mode
 npm-check -u
 
 

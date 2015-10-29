@@ -36,19 +36,18 @@ $RECYCLE.BIN/
 Desktop.ini
 .DS_Store
 
+# node packages
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules/
+
+# bower packages
+bower_components/
+
 
 # nw builder
 /build/
 /cache/
 /tmp/
-
-# node packages
-# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
-node_modules/
-
-
-# bower packages
-bower_components/
 
 # do not include dist folder
 dist/

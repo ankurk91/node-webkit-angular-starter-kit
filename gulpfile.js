@@ -5,12 +5,6 @@ var gulp = require('gulp'),
     utils = require('./tasks/utility'),
     del = require('del');
 
-gulp.task('cleanAll', function () {
-    del(['./dist', './tmp', './release', './build', './npm-debug.log'], {force: true}).then(function (paths) {
-        gutil.log('Success :', gutil.colors.green('Cleaning completed.'));
-    });
-});
-
 
 require('./tasks/dist.js');
 require('./tasks/build.js');
@@ -76,4 +70,14 @@ gulp.task('bump', function () {
     });
 
 
+});
+
+
+/**
+ * Warning: Use this task with caution
+ */
+gulp.task('cleanAll', function () {
+    del(['./dist', './tmp', './release', './build', './npm-debug.log'], {force: true}).then(function (paths) {
+        gutil.log('Success :', gutil.colors.green('Cleaning completed.'));
+    });
 });

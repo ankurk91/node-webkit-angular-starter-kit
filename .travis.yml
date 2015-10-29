@@ -5,7 +5,7 @@
 env:
   global:
     - NODE_VERSION: 0.12.7
-    - NPM_VERSION: 3.3.6
+    - NPM_VERSION: 3.3.9
 
 # git configs
 git:
