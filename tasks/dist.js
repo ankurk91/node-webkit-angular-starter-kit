@@ -77,8 +77,8 @@
         ' */',
         ''].join('\n');
 
-    gulp.task('dist:clean', function (cb) {
-        del(paths.dist.baseDir, {force: true}).then(cb(null))
+    gulp.task('dist:clean', function () {
+        del.sync(paths.dist.baseDir, {force: true})
     });
 
 
