@@ -121,7 +121,9 @@
             .pipe(htmlhint(config))
             .pipe(htmlhint.reporter())
             .pipe(minifyHTML({
-                loose: true
+                loose: true,
+                empty: true,
+                cdata: true
             }))
             .pipe(ngHtml2Js({
                 moduleName: 'nwApp',
@@ -180,7 +182,9 @@
             .pipe(htmlhint.reporter())
             .pipe(processhtml())
             .pipe(minifyHTML({
-                loose: true
+                loose: true,
+                empty: true,
+                cdata: true
             }))
             .pipe(gulp.dest(paths.dist.baseDir))
             .on('error', gutil.log)

@@ -1,6 +1,9 @@
 # ignore all from node_modules
 node_modules/
 
+# ignore bower components
+/app/bower_components
+
 # ignore other folders
 dist/
 tmp/

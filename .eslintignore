@@ -1,5 +1,10 @@
+# http://eslint.org/docs/user-guide/configuring.html#ignoring-files-and-directories
+
 # ignore all from node_modules
 node_modules/
+
+# ignore bower components
+/app/bower_components
 
 # ignore other folders
 dist/
