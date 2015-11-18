@@ -105,6 +105,7 @@ nw app
 * [Angular style guide](https://github.com/johnpapa/angular-styleguide)
 * [Angular UI Modules](https://angular-ui.github.io/)
 * [ng-annotate](https://github.com/Kagami/gulp-ng-annotate)
+* [gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache)
 * [eslint-plugin-angular](https://github.com/Gillespie59/eslint-plugin-angular)
 
 

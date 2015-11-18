@@ -14,7 +14,7 @@
         csslint = require('gulp-csslint'),
         jshintStylish = require('jshint-stylish'),
         htmlhint = require("gulp-htmlhint"),
-        ngHtml2Js = require('gulp-ng-html2js'),
+        templateCache = require('gulp-angular-templatecache'),
         processhtml = require('gulp-processhtml'),
         minifyHTML = require("gulp-minify-html"),
         minifyCSS = require("gulp-minify-css"),
@@ -125,12 +125,12 @@
                 empty: true,
                 cdata: true
             }))
-            .pipe(ngHtml2Js({
-                moduleName: 'nwApp',
-                prefix: 'views/',
-                declareModule: false
+            .pipe(templateCache({
+                filename: 'partials.min.js',
+                module: 'nwApp',
+                base: 'views/',
+                standalone: false
             }))
-            .pipe(concat('partials.min.js'))
             .pipe(uglify())
             .pipe(gulp.dest(paths.dist.js))
             .on('error', gutil.log)
