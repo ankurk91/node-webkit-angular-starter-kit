@@ -10,9 +10,7 @@
         ngAnnotate = require('gulp-ng-annotate'),
         sourcemaps = require('gulp-sourcemaps'),
         uglify = require("gulp-uglify"),
-        jshint = require("gulp-jshint"),
         csslint = require('gulp-csslint'),
-        jshintStylish = require('jshint-stylish'),
         htmlhint = require("gulp-htmlhint"),
         templateCache = require('gulp-angular-templatecache'),
         processhtml = require('gulp-processhtml'),
@@ -85,8 +83,6 @@
     gulp.task('dist:scripts.app', ['dist:clean'], function () {
         return gulp.src(paths.src.scripts)
             .pipe(stripDebug())
-            .pipe(jshint('./.jshintrc'))
-            .pipe(jshint.reporter(jshintStylish))
             .pipe(eslint({configFilePath: './.eslintrc'}))
             .pipe(eslint.format('stylish'))
             .pipe(sourcemaps.init())
@@ -128,7 +124,7 @@
             .pipe(templateCache({
                 filename: 'partials.min.js',
                 module: 'nwApp',
-                base: 'views/',
+                root: 'views/',
                 standalone: false
             }))
             .pipe(uglify())

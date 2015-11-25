@@ -10,7 +10,7 @@
 ### Target development machine
 * Ubuntu 14.04 x64
 * [node](https://github.com/nodejs/node) 0.12.7
-* [npm](https://github.com/npm/npm) 3.4.0
+* [npm](https://github.com/npm/npm) 3.4.1
 * [nw.js](https://github.com/nwjs/nw.js) 0.12.3
 
 
