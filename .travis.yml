@@ -4,8 +4,8 @@
 # define env varialbles
 env:
   global:
-    - NODE_VERSION: 0.12.7
-    - NPM_VERSION: 3.4.0
+    - NODE_VERSION: 0.12.8
+    - NPM_VERSION: 3.5.0
 
 # git configs
 git:

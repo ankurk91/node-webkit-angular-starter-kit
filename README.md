@@ -9,8 +9,8 @@
 
 ### Target development machine
 * Ubuntu 14.04 x64
-* [node](https://github.com/nodejs/node) 0.12.7
-* [npm](https://github.com/npm/npm) 3.4.1
+* [node](https://github.com/nodejs/node) 0.12.8
+* [npm](https://github.com/npm/npm) 3.5.0
 * [nw.js](https://github.com/nwjs/nw.js) 0.12.3
 
 
@@ -95,7 +95,6 @@ nw app
 #### Helper tools' links
 * [Gulp](https://github.com/gulpjs/gulp/)
 * [Bower](http://bower.io)
-* [JSHint](https://github.com/jshint/jshint)
 * [ESLint](https://github.com/eslint/eslint)
 * [CSSLint](https://github.com/CSSLint/csslint)
 * [HTMLLint](https://github.com/htmllint/htmllint)
@@ -120,6 +119,7 @@ nw app
 * Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * Integrate [nw-notify](https://github.com/cgrossde/nw-notify)
+* Integrate [browser-Sync](http://www.browsersync.io/)
 * Lots of improvements
 
 
