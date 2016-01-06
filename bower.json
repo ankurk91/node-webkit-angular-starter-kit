@@ -11,8 +11,7 @@
     "angular-bootstrap": "~0.14.1",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
-    "font-awesome": "~4.4.0",
-    "underscore": "~1.8.3"
+    "font-awesome": "~4.5.0"
   },
   "ignore": []
 }

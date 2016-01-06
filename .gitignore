@@ -3,21 +3,24 @@
 # http://git-scm.com/docs/gitignore
 
 # phpstorm, webstorm
-.idea
+.idea/
 
 # sublime and other ide
 .project
 *.sublime-project
 *.sublime-workspace
+.brackets.json
+_notes/
 
 # logs
 logs/
 *.log
 npm-debug.log*
+error_log
 
 
 # OS generated files
-Thumbs.db
+[Tt]humbs.db
 ehthumbs.db
 *~
 .*~
@@ -33,8 +36,9 @@ $RECYCLE.BIN/
 *.lnk
 
 # Folder config file
-Desktop.ini
-.DS_Store
+[Dd]esktop.ini
+*.DS_store
+.DS_store?
 
 # node packages
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
@@ -42,6 +46,9 @@ node_modules/
 
 # bower packages
 bower_components/
+
+# svn folders
+.svn/
 
 
 # nw builder

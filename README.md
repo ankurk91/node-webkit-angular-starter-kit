@@ -8,9 +8,9 @@
 
 
 ### Target development machine
-* Ubuntu 14.04 x64
+* Ubuntu 14.04 x64 or Similar
 * [node](https://github.com/nodejs/node) 0.12.8
-* [npm](https://github.com/npm/npm) 3.5.0
+* [npm](https://github.com/npm/npm) 3.5.3
 * [nw.js](https://github.com/nwjs/nw.js) 0.12.3
 
 
@@ -29,7 +29,7 @@ git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
 cd node-webkit-angular-starter-kit
 
 # Install bower if not installed, windows users does not need sudo
-npm install -g bower@1.5.3
+npm install -g bower
 
 # Install bower packages
 bower install
@@ -61,7 +61,7 @@ nw app
 | tasks/                         | Gulp tasks breakdown                         |   
 | tmp/                           | Used by nw-builder during packaging, ignored by git                          |
 | [package.json](package.json)              | Defined devDependencies only, application version , npm scripts etc.                            |
-| [version.sh](version.sh)                  | Use this shell script to update app version number to different .json files or you can use ```gulp bump```                             |   
+   
 
 ### ./package.json changes
 
@@ -90,14 +90,6 @@ nw app
 * [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * [nw-notify](https://github.com/cgrossde/nw-notify)
 * [Remote Debugging](https://github.com/nwjs/nw.js/wiki/Debugging-with-devtools#remote-debugging)
-
-
-#### Helper tools' links
-* [Gulp](https://github.com/gulpjs/gulp/)
-* [Bower](http://bower.io)
-* [ESLint](https://github.com/eslint/eslint)
-* [CSSLint](https://github.com/CSSLint/csslint)
-* [HTMLLint](https://github.com/htmllint/htmllint)
 
 
 #### Links for Angular JS devs

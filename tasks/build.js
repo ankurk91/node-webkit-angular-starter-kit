@@ -17,13 +17,13 @@
         version: '0.12.3', // nw.js version number, using stable
         files: ['./dist/**/*'],
         winIco: (utils.os() === 'windows') ? './resources/windows/app-icon.ico' : null,
-        macZip: true,
+        zip: true,
         buildDir: './build',
         cacheDir: './cache'
     };
 
 
-    var isPlatformSupported = function () {
+    var supportedPlatforms = function () {
         var platforms = [];
 
         if (utils.os() === 'windows') {
@@ -35,7 +35,6 @@
             platforms.push('osx64');
         }
         else if (utils.platform() === 'linux64') {
-            console.log('islinux');
             //only built for 64 bit if current os is osx64
             platforms.push('linux64');
         }
@@ -47,13 +46,13 @@
 
         //read original package.json
         var manifest = jetpack.read('./package.json', 'json');
-        var platforms = isPlatformSupported();
+        var platforms = supportedPlatforms();
 
         gutil.log('Build :', gutil.colors.blue('Detected current platform as - ' + utils.platform()));
 
         //exit early if platform not supported
         if (platforms.length === 0) {
-            gutil.log('Build Error :', gutil.colors.red('Unsupported platform. Exit now.'));
+            gutil.log('Build Error :', gutil.colors.white.bgRed.bold('Unsupported platform. Will Exit now.'));
             process.exit(1);
         }
 
@@ -71,7 +70,7 @@
             winIco: nwBuilderOptions.winIco, //wine should be installed on linux/mac systems to use this option
             version: nwBuilderOptions.version,
             files: nwBuilderOptions.files,
-            macZip: nwBuilderOptions.macZip,
+            zip: nwBuilderOptions.zip,
             platforms: platforms
         });
 
@@ -82,9 +81,9 @@
 
         // log success and fail events
         nw.build().then(function () {
-            gutil.log('nw-builder Success:', gutil.colors.green('Build done !'));
+            gutil.log('nw-builder Log:', gutil.colors.white.bgGreen.bold('Build done!'));
         }).catch(function (error) {
-            gutil.log('nw-builder Error :', gutil.colors.red(error));
+            gutil.log('nw-builder Log :', gutil.colors.red(error));
         });
 
     });

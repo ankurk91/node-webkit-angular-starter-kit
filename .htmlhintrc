@@ -1,5 +1,5 @@
 {
-  "doctype-first": true,
+  "doctype-first": false,
   "doctype-html5" : true,
   "tagname-lowercase": true,
   "attr-lowercase": true,

@@ -5,11 +5,11 @@
 env:
   global:
     - NODE_VERSION: 0.12.8
-    - NPM_VERSION: 3.5.0
+    - NPM_VERSION: 3.5.3
 
 # git configs
 git:
-  depth: 10
+  depth: 1
 
 # We don't want to run linux commands as super user
 sudo: false
