@@ -15,12 +15,14 @@ clone_depth: 1                      # clone entire repository history if not def
 install:
     # Get the latest stable version of Node.js or io.js
     - ps: Install-Product node $env:nodejs_version x86
+    # Update npm itself
+    - npm install -g npm
     # Install node packages
     - npm install
     # Install bower
-    - npm install bower -g
+    - npm install -g bower
     # Install gulp
-    - npm install gulp -g
+    - npm install -g gulp
     # Download bower packages
     - bower install
     # download inno setup installer , http://www.appveyor.com/docs/how-to/download-file
