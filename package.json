@@ -42,7 +42,6 @@
     "fs-jetpack": "^0.7.0",
     "gulp": "~3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
-    "gulp-bump": "^1.0.0",
     "gulp-concat": "^2.5.2",
     "gulp-eslint": "^1.0.0",
     "gulp-header": "^1.7.1",

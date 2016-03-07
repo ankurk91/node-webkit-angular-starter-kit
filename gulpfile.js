@@ -37,43 +37,6 @@ gulp.task('release', function () {
 });
 
 /**
- * Bump the version
- * --type=pre will bump the prerelease version *.*.*-x
- * --type=patch or no flag will bump the patch version *.*.x
- * --type=minor will bump the minor version *.x.*
- * --type=major will bump the major version x.*.*
- * --version=1.2.3 will bump to a specific version and ignore other flags
- */
-gulp.task('bump', function () {
-    var bump = require('gulp-bump');
-    var args = require('yargs').argv;
-
-    var options = {},
-        type = args.type,
-        version = args.ver;
-
-    if (version) {
-        options.version = version;
-    } else {
-        options.type = type;
-    }
-
-    var files = [
-        {src: './app/package.json', dest: './app'},
-        {src: './package.json', dest: './'}
-    ];
-
-    files.forEach(function (file) {
-        gulp.src(file.src)
-            .pipe(bump(options))
-            .pipe(gulp.dest(file.dest));
-    });
-
-
-});
-
-
-/**
  * Warning: Use this task with caution
  */
 gulp.task('cleanAll', function () {
