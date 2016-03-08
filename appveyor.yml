@@ -4,23 +4,29 @@
 
 version: 1.0.{build}-{branch}
 
+init:
+  - git config --global core.autocrlf input
+
 # Test against this version of Node.js
 environment:
-  nodejs_version: "0.12"
+  nodejs_version: "4"
+
+#platform:
 
 # set git clone depth
 clone_depth: 1                      # clone entire repository history if not defined
 
 # Install scripts. (runs after repo cloning)
 install:
-    # Get the latest stable version of Node.js or io.js
+    # Get the defined version of Node.js
     - ps: Install-Product node $env:nodejs_version x86
     # Update npm itself
-    - npm install -g npm
+    - npm install -g npm@3.9
     # Install node packages
+    - npm set progress=false
     - npm install
     # Install gulp
-    - npm install -g gulp
+    - npm install -g gulp-cli
     # download inno setup installer , http://www.appveyor.com/docs/how-to/download-file
     - ps: Start-FileDownload "http://www.jrsoftware.org/download.php/is.exe"
     - cmd: dir /b

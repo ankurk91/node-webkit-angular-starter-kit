@@ -81,9 +81,11 @@
 
         // log success and fail events
         nw.build().then(function () {
-            gutil.log('nw-builder Log:', gutil.colors.white.bgGreen.bold('Build done!'));
+            gutil.log('nw-builder Success:', gutil.colors.white.bgGreen.bold('Build done!'));
         }).catch(function (error) {
-            gutil.log('nw-builder Log :', gutil.colors.red(error));
+            gutil.log('nw-builder Error:', gutil.colors.red(error));
+            //should exit and make build fail
+            process.exit(1);
         });
 
     });

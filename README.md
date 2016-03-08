@@ -1,6 +1,6 @@
 # [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit 
 
-[![Dependency Status](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5603e34ff5f2eb00170007a5)
+[![Dependency Status](https://www.versioneye.com/user/projects/5784e2e576ef40003fba8165/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5784e2e576ef40003fba8165)
 [![Build Status](https://travis-ci.org/ank91/node-webkit-angular-starter-kit.svg?branch=master)](https://travis-ci.org/ank91/node-webkit-angular-starter-kit)
 [![Build status](https://ci.appveyor.com/api/projects/status/n87gdk3b2g1mj4oa/branch/master?svg=true)](https://ci.appveyor.com/project/ank91/node-webkit-angular-starter-kit/branch/master)
 
@@ -8,15 +8,11 @@
 
 
 ### Target development machine
-* Ubuntu 14.04 x64 or Similar
-* [node](https://github.com/nodejs/node) 0.12.8
-* [npm](https://github.com/npm/npm) 3.5.3
-* [nw.js](https://github.com/nwjs/nw.js) 0.12.3
-
-
-##### Install node-js on Ubuntu/OS X via [nvm](https://github.com/creationix/nvm)
-* [Quick Guide](https://gist.github.com/ank91/8f107ef490f40f74a1cf)
-* [Detailed Guide](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
+* Ubuntu 16.04 x64 or Similar
+* [node](https://github.com/nodejs/node) 
+* [npm](https://github.com/npm/npm) 
+* [nw.js](https://github.com/nwjs/nw.js)
+* gulp
 
 
 ### Quick start
@@ -28,7 +24,7 @@ git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
 
 cd node-webkit-angular-starter-kit
 
-# Install nw.js package
+# Install nw.js global package
 npm install -g nw@0.12.3
 
 # Install node packages
@@ -85,23 +81,19 @@ nw app
 * [Remote Debugging](https://github.com/nwjs/nw.js/wiki/Debugging-with-devtools#remote-debugging)
 
 
-#### Links for Angular JS devs
-* [Angular style guide](https://github.com/johnpapa/angular-styleguide)
-* [Angular UI Modules](https://angular-ui.github.io/)
-* [ng-annotate](https://github.com/Kagami/gulp-ng-annotate)
-* [gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache)
-* [eslint-plugin-angular](https://github.com/Gillespie59/eslint-plugin-angular)
-
-
 #### Read more about packaging nw.js app
 * [Packaging for Linux](resources/linux/readme.md)
 * [Packaging for Mac OS](resources/osx/readme.md)
 * [Packaging for Windows](resources/windows/readme.md)
 
 
+##### Install node-js 
+* [Ubuntu/Mac](https://github.com/creationix/nvm)
+* [Windows](https://nodejs.org/en/download/)
+
+
 #### TODO
-* Remove [prune](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
-* Remove unwanted files from ```app\node_modules``` using [modclean](https://www.npmjs.com/package/modclean) before packing
+* Remove [orphan](https://docs.npmjs.com/cli/prune) modules from ```app\node_modules``` before packing
 * Integrate [node-webkit-updater](https://github.com/edjafarov/node-webkit-updater)
 * Integrate [nw-notify](https://github.com/cgrossde/nw-notify)
 * Integrate [browser-Sync](http://www.browsersync.io/)
@@ -109,6 +101,4 @@ nw app
 
 
 #### License
--------
-
 MIT [License](LICENSE.txt)

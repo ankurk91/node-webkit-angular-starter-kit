@@ -1,11 +1,10 @@
 # Config file for https://travis-ci.org/
 # Validate this file here - http://lint.travis-ci.org/
 
-# define env varialbles
+# define env vars
 env:
   global:
-    - NODE_VERSION: 0.12.8
-    - NPM_VERSION: 3.5.3
+    - NPM_VERSION: 3.9
 
 # git configs
 git:
@@ -19,35 +18,25 @@ os:
   - linux
   - osx
 
+matrix:
+  fast_finish: true
+
 # Tell Travis CI we are using nodejs
-# Dont define language we will install node and npm by own
-# language: node_js
+language: node_js
 
 # Define node js version
-# Don't define node version we will install node and npm by own
-# node_js: 0.12
+node_js:
+  - '4'
 
 
 before_install:
-# nvm is not yet supported on osx, will manually install for both platforms
-  - echo "Installing nvm and node js"
-  - rm -rf ~/.nvm
-  - git clone https://github.com/creationix/nvm.git ~/.nvm
-  - source ~/.nvm/nvm.sh
-  - nvm install $NODE_VERSION
-  - nvm use $NODE_VERSION
   - npm install -g npm@$NPM_VERSION
-  - node --version
-  - npm --version
-
-
 
 # Install any dependency here
 install:
   # Install node packages
+  - npm set progress=false
   - npm install
-  # Install gulp
-  - npm install -g gulp
 
 # We can combine them to one but
 script:
@@ -55,12 +44,11 @@ script:
     - npm run-script gulp-build
     - npm run-script gulp-release
 
-after_script:
-#
-after_success:
-#
-after_failure:
-#
+#after_script:
+
+#after_success:
+
+#after_failure:
 
 
 # Tell Travis CI to monitor only 'master' branch
@@ -69,8 +57,9 @@ branches:
 
 # Configure email notifications
 notifications:
-     on_success: never
-     on_failure: always
+     email:
+        on_success: never
+        on_failure: always
 
 
 # You can delete cache using travis-ci web interface

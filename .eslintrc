@@ -26,8 +26,8 @@
     },
     "env": {
         "browser": true,
-        "node": true,
-        "amd": true,
+        "node": false,
+        "amd": false,
         "es6": false
     },
     "globals": {
