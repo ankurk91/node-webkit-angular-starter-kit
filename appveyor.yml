@@ -19,12 +19,8 @@ install:
     - npm install -g npm
     # Install node packages
     - npm install
-    # Install bower
-    - npm install -g bower
     # Install gulp
     - npm install -g gulp
-    # Download bower packages
-    - bower install
     # download inno setup installer , http://www.appveyor.com/docs/how-to/download-file
     - ps: Start-FileDownload "http://www.jrsoftware.org/download.php/is.exe"
     - cmd: dir /b
@@ -50,7 +46,6 @@ test_script:
 cache:
   - node_modules -> package.json # preserve "node_modules" directory in the root of build folder but will reset it if package.json is modified
   - app/node_modules -> app\package.json
-  - app/bower_components -> bower.json
   - cache   # nw-builder cache
   - '%APPDATA%\npm-cache'   # npm cache
 

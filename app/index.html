@@ -5,8 +5,8 @@
     <title>Node Webkit App</title>
 
     <!-- build:css css/vendors.min.css -->
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
     <!-- /build -->
 
     <!-- build:css css/theme.min.css -->
@@ -14,18 +14,19 @@
     <!-- /build -->
 
     <!-- build:js js/vendors.min.js -->
-    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-route/angular-route.min.js"></script>
     <!-- /build -->
 
 </head>
 <body ng-controller="AppController as main">
 
-<a ui-sref="home">Home</a>
-<a ui-sref="about">About</a>
+<div class="text-center">
+    <a ng-href="#home">Home</a>
+    <a ng-href="#about">About</a>
+</div>
 
-<div ui-view></div>
+<div data-ng-view></div>
 
 <!-- build:js js/app.min.js -->
 <script type="text/javascript" src="./app.js"></script>

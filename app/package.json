@@ -28,7 +28,12 @@
     "java": false,
     "page-cache": false
   },
-  "dependencies": {},
+  "dependencies": {
+    "angular": "~1.4.9",
+    "angular-route": "~1.4.9",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0"
+  },
   "platformOverrides": {
     "win": {
       "window": {

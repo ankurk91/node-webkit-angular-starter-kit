@@ -46,12 +46,8 @@ before_install:
 install:
   # Install node packages
   - npm install
-  # Install bower
-  - npm install -g bower
   # Install gulp
   - npm install -g gulp
-  # Download bower packages
-  - bower install
 
 # We can combine them to one but
 script:
@@ -83,4 +79,3 @@ cache:
   - cache
   - node_modules
   - app/node_modules
-  - app/bower_components

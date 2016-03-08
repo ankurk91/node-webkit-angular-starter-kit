@@ -28,17 +28,11 @@ git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
 
 cd node-webkit-angular-starter-kit
 
-# Install bower if not installed, windows users does not need sudo
-npm install -g bower
-
-# Install bower packages
-bower install
-
 # Install nw.js package
 npm install -g nw@0.12.3
 
 # Install node packages
-npm install --dev
+npm install 
 
 # Start the app from source
 nw app
@@ -52,7 +46,6 @@ nw app
 | app/                              | Contains js, css, html for your app, this is where your write your angular code                        |
 | app/node_modules/                 | Stores node packages to be packed with app, should not contain any devDependency                      |
 | [app/package.json](app/package.json)   | JSON file required to run nw.js apps , defines dependencies only , no devDependencies should be defined here                        |
-| app/bower_components/                  | Stores your front end dependencies (vendors)                           |
 | cache/                         | Used by nw-builder for caching nw sdk for different platforms, ignored by git                            |
 | dist/                          | Stores minified version of js,css,html. Ready to pack, to be used by nw-builder , created by gulp task , ignored by git                           |
 | node_modules/                  | Stores node package for development (devDependencies) only                             |

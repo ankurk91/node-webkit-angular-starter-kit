@@ -1,25 +1,21 @@
 (function () {
     'use strict';
 
-    angular.module('nwApp').config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    angular.module('nwApp').config(function ($routeProvider) {
 
-        $urlRouterProvider.otherwise('/error');
+        var viewBase = 'views/';
 
-        $stateProvider
-            .state('about', {
-                url: '/about',
-                templateUrl: 'views/about/about.html',
-                controller: 'AboutController'
-            });
-        $stateProvider
-            .state('home', {
-                url: '/home',
-                templateUrl: 'views/home/home.html',
-                controller: 'HomeController'
-            });
+        $routeProvider.when('/home', {
+            templateUrl: viewBase + 'home/home.html',
+            controller: 'HomeController as homeCtrl'
+        }).when('/about', {
+            templateUrl: viewBase + 'about/about.html',
+            controller: 'AboutController as abtCtrl'
+        }).otherwise({
+            redirectTo: '/home'
+        });
 
-
-    }]).run(['$state', function ($state) {
-        $state.go('home');
-    }]);
+    }).run(function ($location) {
+        $location.path('/home');
+    });
 })();
