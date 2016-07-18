@@ -26,11 +26,10 @@ language: node_js
 
 # Define node js version
 node_js:
-  - '4'
+  - '5'
 
 
-before_install:
-  - npm install -g npm@$NPM_VERSION
+#before_install:
 
 # Install any dependency here
 install:

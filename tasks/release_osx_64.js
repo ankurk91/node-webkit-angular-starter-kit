@@ -2,7 +2,7 @@
 
     //only works on OS X because of appdmg
 
-    //@source https://github.com/LinusU/node-appdmg
+    //@link https://github.com/LinusU/node-appdmg
 
     'use strict';
 
@@ -82,7 +82,7 @@
                 reject(error);
             });
             process.on('finish', function () {
-                gutil.log('Success :', gutil.colors.green('DMG is ready - ' + dmgName));
+                gutil.log('AppDMG Success :', gutil.colors.green('DMG is ready - ' + dmgName));
                 resolve();
             });
 

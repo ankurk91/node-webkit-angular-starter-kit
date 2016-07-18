@@ -20,10 +20,8 @@ trim_trailing_whitespace = true
 [*.json]
 indent_size = 2
 
-[*.{scss,css}]
-indent_size = 2
-
 [*.md]
+insert_final_newline = false
 trim_trailing_whitespace = false
 
 [*.js]
@@ -31,3 +29,6 @@ curly_bracket_next_line = false
 spaces_around_operators = true
 indent_brace_style = 1TBS
 spaces_around_brackets = both
+
+[*.{scss,css}]
+indent_size = 2

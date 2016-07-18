@@ -1,4 +1,4 @@
-# [node-webkit](http://nwjs.io/)-[angular](https://angularjs.org/)-starter-kit 
+# [node-webkit](http://nwjs.io/)-[Angular](https://angularjs.org/)-starter-kit 
 
 [![Dependency Status](https://www.versioneye.com/user/projects/5784e2e576ef40003fba8165/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5784e2e576ef40003fba8165)
 [![Build Status](https://travis-ci.org/ank91/node-webkit-angular-starter-kit.svg?branch=master)](https://travis-ci.org/ank91/node-webkit-angular-starter-kit)
@@ -9,10 +9,10 @@
 
 ### Target development machine
 * Ubuntu 16.04 x64 or Similar
-* [node](https://github.com/nodejs/node) 
+* [node](https://github.com/nodejs/node) (see package.json for version)
 * [npm](https://github.com/npm/npm) 
 * [nw.js](https://github.com/nwjs/nw.js)
-* gulp
+* gulp js
 
 
 ### Quick start
@@ -25,7 +25,7 @@ git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
 cd node-webkit-angular-starter-kit
 
 # Install nw.js global package
-npm install -g nw@0.12.3
+npm install -g nw@0.14.6
 
 # Install node packages
 npm install 

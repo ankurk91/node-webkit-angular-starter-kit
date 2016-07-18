@@ -9,7 +9,7 @@ init:
 
 # Test against this version of Node.js
 environment:
-  nodejs_version: "4"
+  nodejs_version: "5"
 
 #platform:
 
@@ -20,13 +20,9 @@ clone_depth: 1                      # clone entire repository history if not def
 install:
     # Get the defined version of Node.js
     - ps: Install-Product node $env:nodejs_version x86
-    # Update npm itself
-    - npm install -g npm@3.9
     # Install node packages
     - npm set progress=false
     - npm install
-    # Install gulp
-    - npm install -g gulp-cli
     # download inno setup installer , http://www.appveyor.com/docs/how-to/download-file
     - ps: Start-FileDownload "http://www.jrsoftware.org/download.php/is.exe"
     - cmd: dir /b
