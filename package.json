@@ -10,20 +10,20 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/ank91/node-webkit-angular-starter-kit.git"
+    "url": "git://github.com/ankurk91/node-webkit-angular-starter-kit.git"
   },
   "bugs": {
-    "url": "https://github.com/ank91/node-webkit-angular-starter-kit/issues"
+    "url": "https://github.com/ankurk91/node-webkit-angular-starter-kit/issues"
   },
-  "homepage": "https://github.com/ank91/node-webkit-angular-starter-kit",
+  "homepage": "https://github.com/ankurk91/node-webkit-angular-starter-kit",
   "maintainers": [
     {
-      "name": "ank91",
-      "web": "http://ank91.github.io"
+      "name": "ankurk91",
+      "web": "http://ankurk91.github.io"
     }
   ],
-  "author": "ank91",
-  "contributors": {},
+  "author": "ankurk91",
+  "contributors": [],
   "scripts": {
     "postinstall": "cd ./app  &&  npm install --production",
     "test": "echo \"Error: no test specified\" && exit 1",

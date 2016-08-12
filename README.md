@@ -1,8 +1,8 @@
 # [node-webkit](http://nwjs.io/)-[Angular](https://angularjs.org/)-starter-kit 
 
-[![Dependency Status](https://www.versioneye.com/user/projects/5784e2e576ef40003fba8165/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5784e2e576ef40003fba8165)
-[![Build Status](https://travis-ci.org/ank91/node-webkit-angular-starter-kit.svg?branch=master)](https://travis-ci.org/ank91/node-webkit-angular-starter-kit)
-[![Build status](https://ci.appveyor.com/api/projects/status/n87gdk3b2g1mj4oa/branch/master?svg=true)](https://ci.appveyor.com/project/ank91/node-webkit-angular-starter-kit/branch/master)
+[![Dependency Status](https://www.versioneye.com/user/projects/57ad5bbe89a9740044eab78e/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57ad5bbe89a9740044eab78e)
+[![Build Status](https://travis-ci.org/ankurk91/node-webkit-angular-starter-kit.svg?branch=master)](https://travis-ci.org/ankurk91/node-webkit-angular-starter-kit)
+[![Build status](https://ci.appveyor.com/api/projects/status/7o3pxkhxb1ahm9gt?svg=true)](https://ci.appveyor.com/project/ankurk91/node-webkit-angular-starter-kit)
 
 > This repository tries to cover organizing, building and packaging nw.js desktop apps, not restricted to Angular JS
 
@@ -20,7 +20,7 @@
 ```shell
 
 # Clone this repo
-git clone https://github.com/ank91/node-webkit-angular-starter-kit.git
+git clone https://github.com/ankurk91/node-webkit-angular-starter-kit.git
 
 cd node-webkit-angular-starter-kit
 
