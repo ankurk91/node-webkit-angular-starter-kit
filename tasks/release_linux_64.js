@@ -97,7 +97,7 @@
 
             process.on('error', function (error) {
                 gutil.log('Gulp error :', gutil.colors.red(error));
-                reject(err);
+                reject(error);
             });
 
             process.on('close', function (exitCode) {
@@ -110,7 +110,14 @@
 
     });
 
-    gulp.task('release:linux64', ['release:cleanTmp', 'release:linux.64.copyBuild', 'release:linux.64.additional', 'release:linux.64.controlFile', 'release:linux.64.desktopFile', 'release:linux.64.createInstaller'], function (cb) {
+    gulp.task('release:linux64', [
+        'release:cleanTmp',
+        'release:linux.64.copyBuild',
+        'release:linux.64.additional',
+        'release:linux.64.controlFile',
+        'release:linux.64.desktopFile',
+        'release:linux.64.createInstaller'
+    ], function (cb) {
         cb(null)
     })
 

@@ -1,7 +1,7 @@
 ## Creating .DMG installer for Mac OS X
 
 
-Using ```appdmg``` which runs only on Mac OS
+We are using ```appdmg``` which runs only on Mac OS
 
 
 ### Folder structure used by nw-builder

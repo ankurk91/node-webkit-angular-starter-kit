@@ -3,6 +3,10 @@
 # ignore all from node_modules
 node_modules/
 
+# ignore bower_components
+bower_components/
+
+
 # ignore other folders
 dist/
 tmp/

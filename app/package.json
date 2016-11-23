@@ -29,10 +29,10 @@
     "page-cache": false
   },
   "dependencies": {
-    "angular": "^1.4.12",
-    "angular-route": "^1.4.12",
-    "bootstrap": "^3.3.6",
-    "font-awesome": "^4.6.3"
+    "angular": "~1.4.14",
+    "angular-route": "~1.4.14",
+    "bootstrap": "~3.3.7",
+    "font-awesome": "~4.7.0"
   },
   "platformOverrides": {
     "win": {
@@ -57,16 +57,16 @@
   "manifestUrl": "https://raw.githubusercontent.com/ankurk91/node-webkit-angular-starter-kit/master/app/package.json",
   "packages": {
     "mac": {
-      "url": ""
+      "url": "http://example.com/release.json"
     },
     "win": {
-      "url": ""
+      "url": "http://example.com/release.json"
     },
     "linux32": {
-      "url": ""
+      "url": "http://example.com/release.json"
     },
     "linux64": {
-      "url": ""
+      "url": "http://example.com/release.json"
     }
   }
 }

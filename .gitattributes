@@ -20,3 +20,4 @@
 
 # Export ignore
 tests export-ignore
+.github export-ignore

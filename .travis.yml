@@ -4,7 +4,7 @@
 # define env vars
 env:
   global:
-    - NPM_VERSION: 3.9
+    - NPM_VERSION: 3.10
 
 # git configs
 git:
@@ -26,7 +26,7 @@ language: node_js
 
 # Define node js version
 node_js:
-  - '5'
+  - '6'
 
 
 #before_install:

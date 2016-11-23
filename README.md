@@ -11,8 +11,8 @@
 * Ubuntu 16.04 x64 or Similar
 * [node](https://github.com/nodejs/node) (see package.json for version)
 * [npm](https://github.com/npm/npm) 
-* [nw.js](https://github.com/nwjs/nw.js)
-* gulp js
+* [nw.js](https://github.com/nwjs/nw.js) (global)
+* [gulp-cli](https://github.com/gulpjs/gulp-cli) (global)
 
 
 ### Quick start

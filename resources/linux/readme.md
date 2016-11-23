@@ -1,7 +1,7 @@
 ## Creating a .deb installer for Ubuntu OS
 
 
-* We wil use ```dpkg-deb``` , an handy tool comes pre-installed on [Ubuntu](http://manpages.ubuntu.com/manpages/natty/man1/dpkg-deb.1.html).
+* We are using ```dpkg-deb``` , an handy tool comes pre-installed on [Ubuntu](http://manpages.ubuntu.com/manpages/natty/man1/dpkg-deb.1.html).
 * Lets organize your files and folder first. See the tree below.
 
 

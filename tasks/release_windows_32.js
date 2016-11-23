@@ -100,7 +100,13 @@
 
     });
 
-    gulp.task('release:windows32', ['release:cleanTmp', 'release:windows.32.copyBuild', 'release:windows.32.copyResources', 'release:windows.32.issFile', 'release:windows.32.createInstaller'], function (cb) {
+    gulp.task('release:windows32', [
+        'release:cleanTmp',
+        'release:windows.32.copyBuild',
+        'release:windows.32.copyResources',
+        'release:windows.32.issFile',
+        'release:windows.32.createInstaller'
+    ], function (cb) {
         cb(null)
     })
 
