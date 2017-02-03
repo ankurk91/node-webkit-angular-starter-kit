@@ -1,6 +1,5 @@
 # [node-webkit](http://nwjs.io/)-[Angular](https://angularjs.org/)-starter-kit 
 
-[![Dependency Status](https://www.versioneye.com/user/projects/57ad5bbe89a9740044eab78e/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57ad5bbe89a9740044eab78e)
 [![Build Status](https://travis-ci.org/ankurk91/node-webkit-angular-starter-kit.svg?branch=master)](https://travis-ci.org/ankurk91/node-webkit-angular-starter-kit)
 [![Build status](https://ci.appveyor.com/api/projects/status/7o3pxkhxb1ahm9gt?svg=true)](https://ci.appveyor.com/project/ankurk91/node-webkit-angular-starter-kit)
 
@@ -24,7 +23,7 @@ git clone https://github.com/ankurk91/node-webkit-angular-starter-kit.git
 
 cd node-webkit-angular-starter-kit
 
-# Install nw.js global package
+# Install nw.js global package if not yet
 npm install -g nw@0.14.6
 
 # Install node packages
